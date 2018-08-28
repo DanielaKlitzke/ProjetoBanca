@@ -1,0 +1,17 @@
+BANCO SISPET
+TABELA cadastro de clientes
+
+idClientes
+cpfOUcnpj
+rg
+nome
+telefone
+endereco
+bairro
+numeroResidencial
+complemento
+cidade
+estado
+cep
+dataDeNascimento
+senha
