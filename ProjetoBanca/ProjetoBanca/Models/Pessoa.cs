@@ -5,9 +5,9 @@ using System.Web;
 
 namespace ProjetoBanca.Models
 {
-    public class Usuario
+    public class Pessoa
     {
-        public int Id { get; set; }
+        public int IdPessoa { get; set; }
         public String Nome { get; set; }
         public String CpfOuCnpj { get; set; }
         public String Rg { get; set; }
@@ -21,8 +21,8 @@ namespace ProjetoBanca.Models
         public String Cep { get; set; }
         public int Telefone { get; set; }
         public String DataNascimento { get; set; }
-        public String TipoPessoa { get; set; }
-        public String Senha { get; set; }
         public String Email { get; set; }
+        public String TipoPessoa { get; set; }
+        
     }
 }

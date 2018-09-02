@@ -5,11 +5,8 @@ using System.Web;
 
 namespace ProjetoBanca.DAO
 {
-    public class UsuariosDAO
+    public class LoginDAO
     {
-        public void AdicionarNovoUsuario()
-        {
 
-        }
     }
 }

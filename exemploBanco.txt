@@ -1,17 +1,59 @@
 BANCO SISPET
-TABELA cadastro de clientes
 
-idClientes
-cpfOUcnpj
-rg
-nome
-telefone
-endereco
-bairro
-numeroResidencial
-complemento
-cidade
-estado
-cep
-dataDeNascimento
-senha
+CREATE TABLE [dbo].[Pessoas] (
+    [idPessoa]          INT           IDENTITY (1, 1) NOT NULL,
+    [nome]              VARCHAR (100) NULL,
+    [cpfOUcnpj]         VARCHAR (14)  NULL,
+    [rg]                VARCHAR (7)   NULL,
+    [sexo]              VARCHAR (1)   NULL,
+    [endereco]          VARCHAR (150) NULL,
+    [bairro]            VARCHAR (80)  NULL,
+    [numeroResidencial] INT           NULL,
+    [complemento]       VARCHAR (20)  NULL,
+    [cidade]            VARCHAR (100) NULL,
+    [estado]            VARCHAR (2)   NULL,
+    [cep]               VARCHAR (8)   NULL,
+    [telefone]          INT           NULL,
+    [dataNascimento]    DATE          NULL,
+    [tipoPessoa]        VARCHAR (1)   NULL,
+    [senha]             VARCHAR (6)   NULL,
+    [email]             VARCHAR (100) NULL,
+    PRIMARY KEY CLUSTERED ([idPessoa] ASC)
+);
+
+CREATE TABLE [dbo].[Login]
+(
+	[IdLogin] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[usuario] VARCHAR(14),
+	[senha] VARCHAR(6)
+);
+
+CREATE TABLE [dbo].[Produtos]
+(
+	[IdProduto] INT  IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[codigoProduto] VARCHAR(20),
+	[nomeProduto] VARCHAR(100),
+	[valorProduto] DECIMAL(10,2),
+	[descricaoProduto] VARCHAR(100),
+	[IdUnidadeMedida] INT,
+	[medida] DECIMAL(10,2),
+	[IdCategoria] INT,
+	[AtivoNaoAivo] INT, 
+    CONSTRAINT [IdUnidadeMedida] FOREIGN KEY ([IdUnidadeMedida]) REFERENCES [UnidadeMedida]([IdUnidadeMedida]), 
+    CONSTRAINT [IdCategoria] FOREIGN KEY ([IdCategoria]) REFERENCES [Categoria]([IdCategoria]) 
+);
+
+
+CREATE TABLE [dbo].[UnidadeMedida]
+(
+	[IdUnidadeMedida] INT  IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[TipoUnidadeMedida] VARCHAR(20)
+)
+
+CREATE TABLE [dbo].[Estoque]
+(
+	[IdEstoque] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	[IdProduto] INT,
+	[QTD] DECIMAL(10,2), 
+    CONSTRAINT [IdProduto] FOREIGN KEY ([IdProduto]) REFERENCES [Produtos]([IdProduto]),
+);
