@@ -12,6 +12,9 @@ namespace ProjetoBanca.Models
         public String NomeProduto { get; set; }
         public double ValorProduto { get; set; }
         public String DescricaoProduto { get; set; }
-        public int IdUnidadeMedida
+        public UnidadeMedida IdUnidadeMedida { get; set; }
+        public double Medida { get; set; }
+        public Categoria IdCategoria { get; set; }
+        public int AtivoNaoAtivo { get; set; }
     }
 }

@@ -6,46 +6,45 @@ using System.Web;
 
 namespace ProjetoBanca.DAO
 {
-    public class PessoaDAO
+    public class CategoriaDAO
     {
-        public void Adicionar(Pessoa pessoa)
+        public void Adicionar(Categoria categoria)
         {
             using (var contexto = new PetContext())
             {
-                contexto.Pessoas.Add(pessoa);
+                contexto.Categorias.Add(categoria);
                 contexto.SaveChanges();
             }
         }
 
-        public IList<Pessoa> ListarPessoa()
+        public IList<Categoria> ListarCategoria()
         {
             using (var contexto = new PetContext())
             {
-                return contexto.Pessoas.ToList();
+                return contexto.Categorias.ToList();
             }
         }
 
-        public void ExcluirPessoa()
+        public void ExcluirCategoria()
         {
             using (var contexto = new PetContext())
             {
-                IList<Pessoa> pessoas = contexto.Pessoas.ToList();
-                foreach (var item in pessoas)
+                IList<Categoria> categorias = contexto.Categorias.ToList();
+                foreach (var item in categorias)
                 {
-                    contexto.Pessoas.Remove(item);
+                    contexto.Categorias.Remove(item);
                 }
                 contexto.SaveChanges();
             }
         }
 
-        /*public void AtualizarPessoa(Pessoa pessoa)
+        /*public void AtualizarCategoria(Categoria categoria)
         {
             using (var contexto = new PetContext())
             {
-                contexto.Entry(pessoa).State = System.Data.Entity.EntityState.Modified;
+                contexto.Entry(categoria).State = System.Data.Entity.EntityState.Modified;
                 contexto.SaveChanges();
             }
         }*/
-
     }
 }

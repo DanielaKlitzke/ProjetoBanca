@@ -1,4 +1,39 @@
-BANCO SISPET
+CREATE TABLE [dbo].[Categoria] (
+    [IdCategoria]   INT          IDENTITY (1, 1) NOT NULL,
+    [TipoCategoria] VARCHAR (20) NULL,
+    PRIMARY KEY CLUSTERED ([IdCategoria] ASC)
+);
+
+
+=================
+
+CREATE TABLE [dbo].[UnidadeMedida] (
+    [IdUnidadeMedida]   INT          IDENTITY (1, 1) NOT NULL,
+    [TipoUnidadeMedida] VARCHAR (20) NULL,
+    PRIMARY KEY CLUSTERED ([IdUnidadeMedida] ASC)
+);
+
+
+===========
+
+
+CREATE TABLE [dbo].[Produtos] (
+    [IdProduto]        INT             IDENTITY (1, 1) NOT NULL,
+    [codigoProduto]    VARCHAR (20)    NULL,
+    [nomeProduto]      VARCHAR (100)   NULL,
+    [valorProduto]     DECIMAL (10, 2) NULL,
+    [descricaoProduto] VARCHAR (100)   NULL,
+    [IdUnidadeMedida]  INT             NULL,
+    [medida]           DECIMAL (10, 2) NULL,
+    [IdCategoria]      INT             NULL,
+    [AtivoNaoAivo]     INT             NULL,
+    PRIMARY KEY CLUSTERED ([IdProduto] ASC),
+    CONSTRAINT [IdUnidadeMedida] FOREIGN KEY ([IdUnidadeMedida]) REFERENCES [dbo].[UnidadeMedida] ([IdUnidadeMedida]),
+    CONSTRAINT [IdCategoria] FOREIGN KEY ([IdCategoria]) REFERENCES [dbo].[Categoria] ([IdCategoria])
+);
+
+
+=====================
 
 CREATE TABLE [dbo].[Pessoas] (
     [idPessoa]          INT           IDENTITY (1, 1) NOT NULL,
@@ -15,45 +50,26 @@ CREATE TABLE [dbo].[Pessoas] (
     [cep]               VARCHAR (8)   NULL,
     [telefone]          INT           NULL,
     [dataNascimento]    DATE          NULL,
-    [tipoPessoa]        VARCHAR (1)   NULL,
-    [senha]             VARCHAR (6)   NULL,
     [email]             VARCHAR (100) NULL,
+    [tipoPessoa]        VARCHAR (1)   NULL,
     PRIMARY KEY CLUSTERED ([idPessoa] ASC)
 );
 
-CREATE TABLE [dbo].[Login]
-(
-	[IdLogin] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[usuario] VARCHAR(14),
-	[senha] VARCHAR(6)
+==========================
+
+CREATE TABLE [dbo].[Login] (
+    [IdLogin] INT          IDENTITY (1, 1) NOT NULL,
+    [usuario] VARCHAR (14) NULL,
+    [senha]   VARCHAR (6)  NULL,
+    PRIMARY KEY CLUSTERED ([IdLogin] ASC)
 );
 
-CREATE TABLE [dbo].[Produtos]
-(
-	[IdProduto] INT  IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[codigoProduto] VARCHAR(20),
-	[nomeProduto] VARCHAR(100),
-	[valorProduto] DECIMAL(10,2),
-	[descricaoProduto] VARCHAR(100),
-	[IdUnidadeMedida] INT,
-	[medida] DECIMAL(10,2),
-	[IdCategoria] INT,
-	[AtivoNaoAivo] INT, 
-    CONSTRAINT [IdUnidadeMedida] FOREIGN KEY ([IdUnidadeMedida]) REFERENCES [UnidadeMedida]([IdUnidadeMedida]), 
-    CONSTRAINT [IdCategoria] FOREIGN KEY ([IdCategoria]) REFERENCES [Categoria]([IdCategoria]) 
-);
+=======================
 
-
-CREATE TABLE [dbo].[UnidadeMedida]
-(
-	[IdUnidadeMedida] INT  IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[TipoUnidadeMedida] VARCHAR(20)
-)
-
-CREATE TABLE [dbo].[Estoque]
-(
-	[IdEstoque] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[IdProduto] INT,
-	[QTD] DECIMAL(10,2), 
-    CONSTRAINT [IdProduto] FOREIGN KEY ([IdProduto]) REFERENCES [Produtos]([IdProduto]),
+CREATE TABLE [dbo].[Estoque] (
+    [IdEstoque] INT             IDENTITY (1, 1) NOT NULL,
+    [IdProduto] INT             NULL,
+    [QTD]       DECIMAL (10, 2) NULL,
+    PRIMARY KEY CLUSTERED ([IdEstoque] ASC),
+    CONSTRAINT [IdProduto] FOREIGN KEY ([IdProduto]) REFERENCES [dbo].[Produtos] ([IdProduto])
 );

@@ -6,13 +6,13 @@ using System.Web;
 
 namespace ProjetoBanca.DAO
 {
-    public class PessoaDAO
+    public class EstoqueDAO
     {
-        public void Adicionar(Pessoa pessoa)
+        public void Adicionar(Estoque estoque)
         {
             using (var contexto = new PetContext())
             {
-                contexto.Pessoas.Add(pessoa);
+                contexto.Estoques.Add(estoque);
                 contexto.SaveChanges();
             }
         }
@@ -46,6 +46,5 @@ namespace ProjetoBanca.DAO
                 contexto.SaveChanges();
             }
         }*/
-
     }
 }

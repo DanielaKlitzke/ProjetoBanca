@@ -23,6 +23,6 @@ namespace ProjetoBanca.Models
         public String DataNascimento { get; set; }
         public String Email { get; set; }
         public String TipoPessoa { get; set; }
-        
+        public Usuario IdUsuario { get; set; }
     }
 }

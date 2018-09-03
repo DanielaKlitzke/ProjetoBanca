@@ -8,7 +8,7 @@ namespace ProjetoBanca.Models
     public class Estoque
     {
         public int IdEstoque { get; set; }
-        public int IdProduto { get; set; }
+        public Produtos IdProduto { get; set; }
         public double QTD { get; set; }
     }
 }

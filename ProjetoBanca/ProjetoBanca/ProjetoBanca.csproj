@@ -170,7 +170,9 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="DAO\CategoriaDAO.cs" />
+    <Compile Include="DAO\EstoqueDAO.cs" />
+    <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="DAO\PetContext.cs" />
     <Compile Include="DAO\PessoaDAO.cs" />
     <Compile Include="Global.asax.cs">
@@ -178,9 +180,10 @@
     </Compile>
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Estoque.cs" />
-    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\Produtos.cs" />
+    <Compile Include="Models\UnidadeMedida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +201,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="System\Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
