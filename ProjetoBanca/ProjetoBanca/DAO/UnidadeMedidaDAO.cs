@@ -6,43 +6,43 @@ using System.Web;
 
 namespace ProjetoBanca.DAO
 {
-    public class EstoqueDAO
+    public class UnidadeMedidaDAO
     {
-        public void Adicionar(Estoque estoque)
+        public void Adicionar(UnidadeMedida unidadeMedida)
         {
             using (var contexto = new PetContext())
             {
-                contexto.Estoques.Add(estoque);
+                contexto.UnidadeMedidas.Add(unidadeMedida);
                 contexto.SaveChanges();
             }
         }
 
-        public IList<Estoque> ListarEstoque()
+        public IList<UnidadeMedida> ListarUnidadeMedida()
         {
             using (var contexto = new PetContext())
             {
-                return contexto.Estoques.ToList();
+                return contexto.UnidadeMedidas.ToList();
             }
         }
 
-        public void ExcluirEstoque()
+        public void ExcluirUnidadeMedida()
         {
             using (var contexto = new PetContext())
             {
-                IList<Estoque> estoques = contexto.Estoques.ToList();
-                foreach (var item in estoques)
+                IList<UnidadeMedida> unidadeMedidas = contexto.UnidadeMedidas.ToList();
+                foreach (var item in unidadeMedidas)
                 {
-                    contexto.Estoques.Remove(item);
+                    contexto.UnidadeMedidas.Remove(item);
                 }
                 contexto.SaveChanges();
             }
         }
 
-        /*public void AtualizarEstoque(Esoque estoque)
+        /*public void AtualizarUnidadeMedida(UnidadeMedida unidadeMdida)
         {
             using (var contexto = new PetContext())
             {
-                contexto.Entry(estoque).State = System.Data.Entity.EntityState.Modified;
+                contexto.Entry(unidadeMedida).State = System.Data.Entity.EntityState.Modified;
                 contexto.SaveChanges();
             }
         }*/

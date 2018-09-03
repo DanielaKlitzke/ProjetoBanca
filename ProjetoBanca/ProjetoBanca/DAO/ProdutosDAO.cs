@@ -6,43 +6,43 @@ using System.Web;
 
 namespace ProjetoBanca.DAO
 {
-    public class EstoqueDAO
+    public class ProdutosDAO
     {
-        public void Adicionar(Estoque estoque)
+        public void Adicionar(Produtos produtos)
         {
             using (var contexto = new PetContext())
             {
-                contexto.Estoques.Add(estoque);
+                contexto.Produtos.Add(produtos);
                 contexto.SaveChanges();
             }
         }
 
-        public IList<Estoque> ListarEstoque()
+        public IList<Produtos> ListarProduto()
         {
             using (var contexto = new PetContext())
             {
-                return contexto.Estoques.ToList();
+                return contexto.Produtos.ToList();
             }
         }
 
-        public void ExcluirEstoque()
+        public void ExcluirProduto()
         {
             using (var contexto = new PetContext())
             {
-                IList<Estoque> estoques = contexto.Estoques.ToList();
-                foreach (var item in estoques)
+                IList<Produtos> produtos = contexto.Produtos.ToList();
+                foreach (var item in produtos)
                 {
-                    contexto.Estoques.Remove(item);
+                    contexto.Produtos.Remove(item);
                 }
                 contexto.SaveChanges();
             }
         }
 
-        /*public void AtualizarEstoque(Esoque estoque)
+        /*public void AtualizarProduto(Produtos produto)
         {
             using (var contexto = new PetContext())
             {
-                contexto.Entry(estoque).State = System.Data.Entity.EntityState.Modified;
+                contexto.Entry(produto).State = System.Data.Entity.EntityState.Modified;
                 contexto.SaveChanges();
             }
         }*/

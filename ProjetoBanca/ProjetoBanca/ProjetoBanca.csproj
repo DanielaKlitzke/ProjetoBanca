@@ -172,6 +172,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAO\CategoriaDAO.cs" />
     <Compile Include="DAO\EstoqueDAO.cs" />
+    <Compile Include="DAO\ProdutosDAO.cs" />
+    <Compile Include="DAO\UnidadeMedidaDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="DAO\PetContext.cs" />
     <Compile Include="DAO\PessoaDAO.cs" />
