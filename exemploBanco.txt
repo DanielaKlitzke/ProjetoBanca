@@ -1,13 +1,13 @@
-CREATE TABLE [dbo].[Categoria] (
+CREATE TABLE [dbo].[Categorias] (
     [IdCategoria]   INT          IDENTITY (1, 1) NOT NULL,
     [TipoCategoria] VARCHAR (20) NULL,
     PRIMARY KEY CLUSTERED ([IdCategoria] ASC)
 );
 
 
-=================
+=============
 
-CREATE TABLE [dbo].[UnidadeMedida] (
+CREATE TABLE [dbo].[UnidadeMedidas] (
     [IdUnidadeMedida]   INT          IDENTITY (1, 1) NOT NULL,
     [TipoUnidadeMedida] VARCHAR (20) NULL,
     PRIMARY KEY CLUSTERED ([IdUnidadeMedida] ASC)
@@ -26,14 +26,14 @@ CREATE TABLE [dbo].[Produtos] (
     [IdUnidadeMedida]  INT             NULL,
     [medida]           DECIMAL (10, 2) NULL,
     [IdCategoria]      INT             NULL,
-    [AtivoNaoAivo]     INT             NULL,
+    [AtivoNaoAtivo]     INT             NULL,
     PRIMARY KEY CLUSTERED ([IdProduto] ASC),
-    CONSTRAINT [IdUnidadeMedida] FOREIGN KEY ([IdUnidadeMedida]) REFERENCES [dbo].[UnidadeMedida] ([IdUnidadeMedida]),
-    CONSTRAINT [IdCategoria] FOREIGN KEY ([IdCategoria]) REFERENCES [dbo].[Categoria] ([IdCategoria])
+    CONSTRAINT [IdUnidadeMedida] FOREIGN KEY ([IdUnidadeMedida]) REFERENCES [dbo].[UnidadeMedidas] ([IdUnidadeMedida]),
+    CONSTRAINT [IdCategoria] FOREIGN KEY ([IdCategoria]) REFERENCES [dbo].[Categorias] ([IdCategoria])
 );
 
 
-=====================
+=============
 
 CREATE TABLE [dbo].[Pessoas] (
     [idPessoa]          INT           IDENTITY (1, 1) NOT NULL,
@@ -55,18 +55,19 @@ CREATE TABLE [dbo].[Pessoas] (
     PRIMARY KEY CLUSTERED ([idPessoa] ASC)
 );
 
-==========================
+=================
 
-CREATE TABLE [dbo].[Login] (
-    [IdLogin] INT          IDENTITY (1, 1) NOT NULL,
-    [usuario] VARCHAR (14) NULL,
-    [senha]   VARCHAR (6)  NULL,
-    PRIMARY KEY CLUSTERED ([IdLogin] ASC)
+CREATE TABLE [dbo].[Usuarios] (
+    [IdUsuario] INT          IDENTITY (1, 1) NOT NULL,
+    [login]     VARCHAR (14) NULL,
+    [senha]     VARCHAR (6)  NULL,
+	[permissao] INT NULL,
+    PRIMARY KEY CLUSTERED ([IdUsuario] ASC)
 );
 
-=======================
+==================
 
-CREATE TABLE [dbo].[Estoque] (
+CREATE TABLE [dbo].[Estoques] (
     [IdEstoque] INT             IDENTITY (1, 1) NOT NULL,
     [IdProduto] INT             NULL,
     [QTD]       DECIMAL (10, 2) NULL,

@@ -12,7 +12,7 @@ namespace ProjetoBanca.DAO
         {
             using (var contexto = new PetContext())
             {
-                contexto.Estoque.Add(estoque);
+                contexto.Estoques.Add(estoque);
                 contexto.SaveChanges();
             }
         }
@@ -21,7 +21,7 @@ namespace ProjetoBanca.DAO
         {
             using (var contexto = new PetContext())
             {
-                return contexto.Estoque.ToList();
+                return contexto.Estoques.ToList();
             }
         }
 
@@ -29,7 +29,7 @@ namespace ProjetoBanca.DAO
         {
             using (var contexto = new PetContext())
             {
-                contexto.Estoque.Remove(estoque);
+                contexto.Estoques.Remove(estoque);
                 contexto.SaveChanges();
             }
         }
@@ -38,7 +38,7 @@ namespace ProjetoBanca.DAO
         {
             using (var contexto = new PetContext())
             {
-                contexto.Estoque.Update(estoque);
+                contexto.Estoques.Update(estoque);
                 contexto.SaveChanges();
             }
         }

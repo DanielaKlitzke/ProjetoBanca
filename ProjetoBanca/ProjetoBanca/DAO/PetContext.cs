@@ -10,7 +10,7 @@ namespace ProjetoBanca.DAO
 
         public DbSet<Categoria> Categorias { get; set; }
 
-        public DbSet<Estoque> Estoque { get; set; }
+        public DbSet<Estoque> Estoques { get; set; }
 
         public DbSet<Produtos> Produtos { get; set; }
 
