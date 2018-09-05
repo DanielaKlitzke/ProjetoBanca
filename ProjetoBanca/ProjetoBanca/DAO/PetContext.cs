@@ -10,7 +10,7 @@ namespace ProjetoBanca.DAO
 
         public DbSet<Categoria> Categorias { get; set; }
 
-        public DbSet<Estoque> Estoques { get; set; }
+        public DbSet<Estoque> Estoque { get; set; }
 
         public DbSet<Produtos> Produtos { get; set; }
 
@@ -21,9 +21,8 @@ namespace ProjetoBanca.DAO
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssllocaldb;Database=PetDB;Trusted_Connection=true;");
+            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=PetDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
-        
     }
 }
