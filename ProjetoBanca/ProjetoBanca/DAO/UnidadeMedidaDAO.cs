@@ -25,26 +25,22 @@ namespace ProjetoBanca.DAO
             }
         }
 
-        public void ExcluirUnidadeMedida()
+        public void ExcluirUnidadeMedida(UnidadeMedida unidadeMedida)
         {
             using (var contexto = new PetContext())
             {
-                IList<UnidadeMedida> unidadeMedidas = contexto.UnidadeMedidas.ToList();
-                foreach (var item in unidadeMedidas)
-                {
-                    contexto.UnidadeMedidas.Remove(item);
-                }
+                contexto.UnidadeMedidas.Remove(unidadeMedida);
                 contexto.SaveChanges();
             }
         }
 
-        /*public void AtualizarUnidadeMedida(UnidadeMedida unidadeMdida)
+        public void AtualizarUnidadeMedida(UnidadeMedida unidadeMedida)
         {
             using (var contexto = new PetContext())
             {
-                contexto.Entry(unidadeMedida).State = System.Data.Entity.EntityState.Modified;
+                contexto.UnidadeMedidas.Update(unidadeMedida);
                 contexto.SaveChanges();
             }
-        }*/
+        }
     }
 }

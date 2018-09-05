@@ -25,26 +25,22 @@ namespace ProjetoBanca.DAO
             }
         }
 
-        public void ExcluirEstoque()
+        public void ExcluirEstoque(Estoque estoque)
         {
             using (var contexto = new PetContext())
             {
-                IList<Estoque> estoques = contexto.Estoques.ToList();
-                foreach (var item in estoques)
-                {
-                    contexto.Estoques.Remove(item);
-                }
+                contexto.Estoques.Remove(estoque);
                 contexto.SaveChanges();
             }
         }
 
-        /*public void AtualizarEstoque(Esoque estoque)
+        public void AtualizarEstoque(Estoque estoque)
         {
             using (var contexto = new PetContext())
             {
-                contexto.Entry(estoque).State = System.Data.Entity.EntityState.Modified;
+                contexto.Estoques.Update(estoque);
                 contexto.SaveChanges();
             }
-        }*/
+        }
     }
 }

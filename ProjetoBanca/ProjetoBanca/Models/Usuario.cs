@@ -10,5 +10,6 @@ namespace ProjetoBanca.Models
         public int idUsuario { get; set; }
         public String Login { get; set; }
         public String Senha { get; set; }
+        public int Permissao { get; set; }
     }
 }

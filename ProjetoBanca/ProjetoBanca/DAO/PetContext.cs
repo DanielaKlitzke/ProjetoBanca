@@ -21,7 +21,7 @@ namespace ProjetoBanca.DAO
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssllocaldb;Database=PeDB;Trusted_Connection=true;");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssllocaldb;Database=PetDB;Trusted_Connection=true;");
         }
 
         

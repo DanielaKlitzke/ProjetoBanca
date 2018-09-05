@@ -25,26 +25,22 @@ namespace ProjetoBanca.DAO
             }
         }
 
-        public void ExcluirUsuario()
+        public void ExcluirUsuario(Usuario usuario)
         {
             using (var contexto = new PetContext())
             {
-                IList<Usuario> usuarios = contexto.Usuarios.ToList();
-                foreach (var item in usuarios)
-                {
-                    contexto.Usuarios.Remove(item);
-                }
+                contexto.Usuarios.Remove(usuario);
                 contexto.SaveChanges();
             }
         }
 
-        /*public void AtualizarUsuario(Usuario usuario)
+        public void AtualizarUsuario(Usuario usuario)
         {
             using (var contexto = new PetContext())
             {
-                contexto.Entry(usuario).State = System.Data.Entity.EntityState.Modified;
+                contexto.Usuarios.Update(usuario);
                 contexto.SaveChanges();
             }
-        }*/
+        }
     }
 }
