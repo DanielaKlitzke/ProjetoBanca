@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastro Pessoa</title>
+</head>
+<body>
+    <div>
+        <form action="/Pessoa/Adiciona" method="post">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" />
+
+
+            <input type="radio" name="cpfoucnpj" value="cpf" checked> CPF
+            <input type="radio" name="cpfoucnpj" value="cnpj"> CNPJ
+            <input id="cpfoucnpj" name="cpfoucnpj" />
+
+            <input type="radio" name="sexo" value="masculino" checked> MASCULINO
+            <input type="radio" name="sexo" value="feminino"> FEMININO
+
+            <label for="endereco">Endereço</label>
+            <input id="endereco" name="endereco" />
+
+            <label for="bairro">Bairro</label>
+            <input id="bairro" name="bairro" />
+
+            <label for="numeroResidencia">Número</label>
+            <input id="numeroResidencia" name="numeroResidencia" />
+
+            <label for="complemento">Complemento</label>
+            <input id="complemento" name="complemento" />
+
+            <label for="cidade">Cidade</label>
+            <input id="cidade" name="cidade" />
+
+            <label for="estado">Estado</label>
+            <input id="estado" name="estado" />
+
+            <label for="cep">CEP</label>
+            <input id="cep" name="cep" />
+
+            <label for="telefone">Telefone</label>
+            <input id="telefone" name="telefone" />
+
+            <label for="dataNascimento">Data de nascimento</label>
+            <input id="dataNascimento" name="dataNascimento" />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" />
+
+            <label for="senha">Senha</label>
+            <input id="senha" name="senha" />
+
+            <input type="submit" value="Cadastrar"/>
+                   
+        </form>
+    </div>
+</body>
+</html>
