@@ -25,6 +25,14 @@ namespace ProjetoBanca.DAO
             }
         }
 
+        public Usuario BuscaPorId(int id)
+        {
+            using (var contexto = new PetContext())
+            {
+                return contexto.Usuarios.Find(id);
+            }
+        }
+
         public void ExcluirUsuario(Usuario usuario)
         {
             using (var contexto = new PetContext())

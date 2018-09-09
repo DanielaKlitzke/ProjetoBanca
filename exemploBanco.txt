@@ -5,7 +5,7 @@ CREATE TABLE [dbo].[Categorias] (
 );
 
 
-=============
+GO
 
 CREATE TABLE [dbo].[UnidadeMedidas] (
     [IdUnidadeMedida]   INT          IDENTITY (1, 1) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE [dbo].[UnidadeMedidas] (
 );
 
 
-===========
+GO
 
 
 CREATE TABLE [dbo].[Produtos] (
@@ -26,14 +26,14 @@ CREATE TABLE [dbo].[Produtos] (
     [IdUnidadeMedida]  INT             NULL,
     [medida]           DECIMAL (10, 2) NULL,
     [IdCategoria]      INT             NULL,
-    [AtivoNaoAtivo]     INT             NULL,
+    [AtivoNaoAtivo]    INT             NULL,
     PRIMARY KEY CLUSTERED ([IdProduto] ASC),
     CONSTRAINT [IdUnidadeMedida] FOREIGN KEY ([IdUnidadeMedida]) REFERENCES [dbo].[UnidadeMedidas] ([IdUnidadeMedida]),
     CONSTRAINT [IdCategoria] FOREIGN KEY ([IdCategoria]) REFERENCES [dbo].[Categorias] ([IdCategoria])
 );
 
 
-=============
+GO
 
 CREATE TABLE [dbo].[Pessoas] (
     [idPessoa]          INT           IDENTITY (1, 1) NOT NULL,
@@ -49,13 +49,13 @@ CREATE TABLE [dbo].[Pessoas] (
     [estado]            VARCHAR (2)   NULL,
     [cep]               VARCHAR (8)   NULL,
     [telefone]          INT           NULL,
-    [dataNascimento]    DATE          NULL,
+    [dataNascimento]    VARCHAR (8)   NULL,
     [email]             VARCHAR (100) NULL,
     [tipoPessoa]        VARCHAR (1)   NULL,
     PRIMARY KEY CLUSTERED ([idPessoa] ASC)
 );
 
-=================
+GO
 
 CREATE TABLE [dbo].[Usuarios] (
     [IdUsuario] INT          IDENTITY (1, 1) NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE [dbo].[Usuarios] (
     PRIMARY KEY CLUSTERED ([IdUsuario] ASC)
 );
 
-==================
+GO
 
 CREATE TABLE [dbo].[Estoques] (
     [IdEstoque] INT             IDENTITY (1, 1) NOT NULL,

@@ -25,6 +25,14 @@ namespace ProjetoBanca.DAO
             }
         }
 
+        public Estoque BuscaPorId(int id)
+        {
+            using (var contexto = new PetContext())
+            {
+                return contexto.Estoques.Find(id);
+            }
+        }
+
         public void ExcluirEstoque(Estoque estoque)
         {
             using (var contexto = new PetContext())

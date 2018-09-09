@@ -25,6 +25,14 @@ namespace ProjetoBanca.DAO
             }
         }
 
+        public UnidadeMedida BuscaPorId(int id)
+        {
+            using (var contexto = new PetContext())
+            {
+                return contexto.UnidadeMedidas.Find(id);
+            }
+        }
+
         public void ExcluirUnidadeMedida(UnidadeMedida unidadeMedida)
         {
             using (var contexto = new PetContext())

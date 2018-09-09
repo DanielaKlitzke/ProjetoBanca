@@ -22,7 +22,7 @@ namespace ProjetoBanca.Models
         public String Estado { get; set; }
         public String Cep { get; set; }
         public int Telefone { get; set; }
-        //public String DataNascimento { get; set; }
+        public String DataNascimento { get; set; }
         public String Email { get; set; }
         public String TipoPessoa { get; set; }
         //public Usuario IdUsuario { get; set; }
