@@ -28,7 +28,7 @@ namespace ProjetoBanca.Controllers
             PessoaDAO dao = new PessoaDAO();
             dao.Adicionar(pessoa);
 
-            return RedirectToAction("Index","Produto");
+            return RedirectToAction("Index","Pessoa");
         }
     }
 }
