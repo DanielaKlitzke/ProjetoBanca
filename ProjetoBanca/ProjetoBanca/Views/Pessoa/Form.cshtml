@@ -15,14 +15,16 @@
         <form action="/Pessoa/Adiciona" method="post">
 
             <label for="nome">Nome</label>
-            <input id="nome" name="pessoa.Nome" />
+            <input id="nome" name="pessoa.Nome" value="@ViewBag.Pessoa.Nome"/>
+            @Html.ValidationMessage("pessoa.Nome")
 
-            @*<input type="radio" name="cpfoucnpj" value="cpf" checked> CPF
-            <input type="radio" name="cpfoucnpj" value="cnpj"> CNPJ
-            @*<input id="cpfoucnpj" name="pessoa.CpfOuCnpj" />*@
+            <input type="radio" name="pessoa.TipoPessoa" value="1" checked> CPF
+            <input type="radio" name="pessoa.TipoPessoa" value="2"> CNPJ
+
+            <input id="cpfoucnpj" name="pessoa.CpfOuCnpj" value="@ViewBag.Pessoa.CpfOuCnpj" />
 
             <label for="rg">RG</label>
-            <input id="rg" name="pessoa.RG" />
+            <input id="rg" name="pessoa.Rg" value="@ViewBag.Pessoa.Rg" />
 
             <input type="radio" name="pessoa.Sexo" value="m" checked> MASCULINO
             <input type="radio" name="pessoa.Sexo" value="f"> FEMININO
@@ -51,8 +53,8 @@
             <label for="telefone">Telefone</label>
             <input id="telefone" name="pessoa.Telefone" />
 
-            <label for="dataNascimento">Data de nascimento</label>
-            <input type="date" name="pessoa.DataNascimento" />
+            @*<label for="dataNascimento">Data de nascimento</label>
+            <input type="date" name="pessoa.DataNascimento" />*@
 
             <label for="email">Email</label>
             <input id="email" name="pessoa.Email" />

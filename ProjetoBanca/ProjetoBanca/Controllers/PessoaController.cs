@@ -24,11 +24,19 @@ namespace ProjetoBanca.Controllers
         }
 
         public ActionResult Adiciona(Pessoa pessoa)            
-        {          
-            PessoaDAO dao = new PessoaDAO();
-            dao.Adicionar(pessoa);
+        {
+            if (ModelState.IsValid)
+            {
+                PessoaDAO dao = new PessoaDAO();
+                dao.Adicionar(pessoa);
 
-            return RedirectToAction("Index","Pessoa");
+                return RedirectToAction("Index", "Pessoa");
+            }
+            else
+            {
+                ViewBag.Pessoa = pessoa;
+                return View("Form");
+            }
         }
     }
 }
