@@ -26,13 +26,23 @@
             <input id="descricao" name="produto.DescricaoProduto" />
 
             <label for="unidadeMedida">Unidade de Medida</label>
-            <input id="unidadeMedida" name="produto.IdUnidadeMedida" />
+            <select id="unidadeMedida" name="produto.IdUnidadeMedida">
+                    @foreach (var unidade in ViewBag.UnidadeMedidas)
+                    {
+                        <option value="@unidade.IdUnidadeMedida">unidade.TipoUnidadeMedida</option>
+                    }
+            </select>
 
             <label for="medida">Medida</label>
             <input id="medida" name="produto.Medida" />
 
-            <label for="idCategoria">Categoria</label>
-            <input id="iCategoria" name="produto.IdCategoria" />
+            <label for="Categoria">Categoria</label>
+            <select id="categoria" name="produto.IdCategoria">
+                @foreach (var categoria in ViewBag.Categorias)
+                {
+                    <option value="@categoria.IdCategoria">categoria.TipoCategoria</option>
+                }
+            </select>
 
             <label for="ativo">Ativo</label>
             <input id="ativo" name="produto.AtivoNaoAtivo" />

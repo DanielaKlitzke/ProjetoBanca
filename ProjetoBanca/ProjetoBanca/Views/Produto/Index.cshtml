@@ -29,20 +29,19 @@
             </thead>
             <tbody>
                 @foreach(var produto in ViewBag.Produto)
-                {
-                <tr>
-                    <td>@produto.IdProduto</td>
-                    <td>@produto.CodigoProduto</td>
-                    <td>@produto.NomeProduto</td>
-                    <td>@produto.ValorProduto</td>
-                    <td>@produto.DescricaoProduto</td>
-                    <td>@produto.IdUnidadeMedida</td>
-                    <td>@produto.Medida</td>
-                    <td>@produto.IdCategoria</td>
-                    <td>@produto.AtivoNaoativo</td>
-
-                </tr>
-                }
+                    {
+                        <tr>
+                            <td>@produto.IdProduto</td>
+                            <td>@produto.CodigoProduto</td>
+                            <td>@produto.NomeProduto</td>
+                            <td>@produto.ValorProduto</td>
+                            <td>@produto.DescricaoProduto</td>
+                            <td>@produto.UnidadeMedida</td>
+                            <td>@produto.Medida</td>
+                            <td>@produto.Categoria</td>
+                            <td>@produto.AtivoNaoativo</td>
+                        </tr>
+                    }
             </tbody>
         </table>
     </div>

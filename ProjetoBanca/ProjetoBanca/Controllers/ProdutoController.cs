@@ -21,7 +21,14 @@ namespace ProjetoBanca.Controllers
 
         public ActionResult Form()
         {
-            return View();
+            UnidadeMedidaDAO unidadeDao = new UnidadeMedidaDAO();
+            IList<UnidadeMedida> unidades = unidadeDao.ListarUnidadeMedida();
+            ViewBag.UnidadeMedidas = unidades;
+
+            CategoriaDAO categoriaDao = new CategoriaDAO();
+            IList<Categoria> categorias = categoriaDao.ListarCategoria();
+            ViewBag.Categorias = categorias;
+            return View();           
         }
 
         public ActionResult Adiciona(Produtos produtos )
