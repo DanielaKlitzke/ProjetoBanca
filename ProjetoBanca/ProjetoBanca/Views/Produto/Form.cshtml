@@ -29,7 +29,7 @@
             <select id="unidadeMedida" name="produto.IdUnidadeMedida">
                     @foreach (var unidade in ViewBag.UnidadeMedidas)
                     {
-                        <option value="@unidade.IdUnidadeMedida">unidade.TipoUnidadeMedida</option>
+                        <option value="@unidade.IdUnidadeMedida">@unidade.TipoUnidadeMedida</option>
                     }
             </select>
 

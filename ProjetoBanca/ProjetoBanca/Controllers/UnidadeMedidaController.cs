@@ -23,5 +23,12 @@ namespace ProjetoBanca.Controllers
         {
             return View();
         }
+
+        public ActionResult Adiciona(UnidadeMedida unidadeMedida)
+        {
+            UnidadeMedidaDAO dao = new UnidadeMedidaDAO();
+            dao.Adicionar(unidadeMedida);
+            return RedirectToAction("Index", "UnidadeMedida");
+        }
     }
 }
