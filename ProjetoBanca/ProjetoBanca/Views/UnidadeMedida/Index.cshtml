@@ -8,23 +8,23 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Lista de Categorias</title>
+    <title>Lista de Unidade de Medidas</title>
 </head>
 <body>
-    <div>
+    <div> 
         <table>
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Nome da categoria</th>
+                    <th>Tipo de unidade de medida</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var categoria in ViewBag.Categorias)
+                @foreach (var unidade in ViewBag.UnidadeMedidas)
                 {
                     <tr>
-                        <td>@categoria.IdCategoria</td>
-                        <td>@categoria.TipoCategoria</td>
+                        <td>@unidade.IdUnidadeMedida</td>
+                        <td>@unidade.TipoUnidadeMedida</td>
                     </tr>
                 }
             </tbody>
