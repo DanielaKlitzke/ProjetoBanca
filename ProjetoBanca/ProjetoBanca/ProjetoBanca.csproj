@@ -199,13 +199,13 @@
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Pessoa\Form.cshtml" />
-    <Content Include="Views\Pessoa\Adiciona.cshtml" />
     <Content Include="Views\Produto\Index.cshtml" />
     <Content Include="Views\Produto\Form.cshtml" />
     <Content Include="Views\Categoria\Form.cshtml" />
     <Content Include="Views\Categoria\Index.cshtml" />
     <Content Include="Views\UnidadeMedida\Index.cshtml" />
     <Content Include="Views\UnidadeMedida\Form.cshtml" />
+    <Content Include="Views\Pessoa\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

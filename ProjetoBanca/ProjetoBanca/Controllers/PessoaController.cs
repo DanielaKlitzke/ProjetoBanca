@@ -11,6 +11,13 @@ namespace ProjetoBanca.Controllers
     public class PessoaController : Controller
     {
         // GET: Pessoa
+        public ActionResult Index()
+        {
+            PessoaDAO dao = new PessoaDAO();
+            IList<Pessoa> pessoas = dao.ListarPessoa();
+            ViewBag.Pessoa = pessoas;
+            return View();
+        }
         public ActionResult Form()
         {
             return View();
