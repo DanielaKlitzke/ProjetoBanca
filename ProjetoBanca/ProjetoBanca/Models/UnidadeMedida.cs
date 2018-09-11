@@ -10,6 +10,8 @@ namespace ProjetoBanca.Models
     {
         [Key]
         public int IdUnidadeMedida { get; set; }
+
+        [Required, StringLength(20)]
         public String TipoUnidadeMedida { get; set; }
     }
 }

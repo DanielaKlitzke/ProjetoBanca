@@ -10,6 +10,7 @@ namespace ProjetoBanca.Models
     {
         [Key]
         public int IdCategoria { get; set; }
+        [Required, StringLength(20)]
         public String TipoCategoria { get; set; }
     }
 }

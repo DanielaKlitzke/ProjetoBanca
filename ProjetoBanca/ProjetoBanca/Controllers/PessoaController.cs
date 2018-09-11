@@ -20,6 +20,7 @@ namespace ProjetoBanca.Controllers
         }
         public ActionResult Form()
         {
+            ViewBag.Pessoa = new Pessoa();
             return View();
         }
 
@@ -29,7 +30,6 @@ namespace ProjetoBanca.Controllers
             {
                 PessoaDAO dao = new PessoaDAO();
                 dao.Adicionar(pessoa);
-
                 return RedirectToAction("Index", "Pessoa");
             }
             else

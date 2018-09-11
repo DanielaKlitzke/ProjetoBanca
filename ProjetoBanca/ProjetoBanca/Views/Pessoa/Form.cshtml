@@ -15,52 +15,65 @@
         <form action="/Pessoa/Adiciona" method="post">
 
             <label for="nome">Nome</label>
-            <input id="nome" name="pessoa.Nome" />
+            <input id="nome" name="pessoa.Nome" value="@ViewBag.Pessoa.Nome" />
             @Html.ValidationMessage("pessoa.Nome")
 
             <input type="radio" name="pessoa.TipoPessoa" value="1" checked> CPF
             <input type="radio" name="pessoa.TipoPessoa" value="2"> CNPJ
 
-            <input id="cpfoucnpj" name="pessoa.CpfOuCnpj" />
+            <input id="cpfoucnpj" name="pessoa.CpfOuCnpj" value="@ViewBag.Pessoa.CpfOuCnpj" />
+            @Html.ValidationMessage("pessoa.CpfOuCnpj")
 
             <label for="rg">RG</label>
-            <input id="rg" name="pessoa.Rg" />
+            <input id="rg" name="pessoa.Rg" value="@ViewBag.Pessoa.Rg" />
+            @Html.ValidationMessage("pessoa.Rg")
 
             <input type="radio" name="pessoa.Sexo" value="m" checked> MASCULINO
             <input type="radio" name="pessoa.Sexo" value="f"> FEMININO
 
             <label for="endereco">Endereço</label>
-            <input id="endereco" name="pessoa.Endereco" />
+            <input id="endereco" name="pessoa.Endereco" value="@ViewBag.Pessoa.Endereco" />
+            @Html.ValidationMessage("pessoa.Endereco")
 
             <label for="bairro">Bairro</label>
-            <input id="bairro" name="pessoa.Bairro" />
+            <input id="bairro" name="pessoa.Bairro" value="@ViewBag.Pessoa.Bairro" />
+            @Html.ValidationMessage("pessoa.Bairro")
 
             <label for="numeroResidencia">Número</label>
-            <input id="numeroResidencia" name="pessoa.NumeroResidencial" />
+            <input id="numeroResidencia" name="pessoa.NumeroResidencial" value="@ViewBag.Pessoa.NumeroResidencial" />
 
             <label for="complemento">Complemento</label>
-            <input id="complemento" name="pessoa.Complemento" />
+            <input id="complemento" name="pessoa.Complemento" value="@ViewBag.Pessoa.Complemento" />
+            @Html.ValidationMessage("pessoa.Complemento")
 
             <label for="cidade">Cidade</label>
-            <input id="cidade" name="pessoa.Cidade" />
+            <input id="cidade" name="pessoa.Cidade" value="@ViewBag.Pessoa.Cidade" />
+            @Html.ValidationMessage("pessoa.Cidade")
 
             <label for="estado">Estado</label>
-            <input id="estado" name="pessoa.Estado" />
+            <input id="estado" name="pessoa.Estado" value="@ViewBag.Pessoa.Estado" />
+            @Html.ValidationMessage("pessoa.Estado")
 
             <label for="cep">CEP</label>
-            <input id="cep" name="pessoa.Cep" />
+            <input id="cep" name="pessoa.Cep" value="@ViewBag.Pessoa.Cep" />
+            @Html.ValidationMessage("pessoa.Cep")
 
             <label for="telefone">Telefone</label>
-            <input id="telefone" name="pessoa.Telefone" />
+            <input id="telefone" name="pessoa.Telefone" value="@ViewBag.Pessoa.Telefone" />
+            @Html.ValidationMessage("pessoa.Telefone")
 
             @*<label for="dataNascimento">Data de nascimento</label>
             <input type="date" name="pessoa.DataNascimento" />*@
 
             <label for="email">Email</label>
-            <input id="email" name="pessoa.Email" />
+            <input id="email" name="pessoa.Email" value="@ViewBag.Pessoa.Email" />
+            @Html.ValidationMessage("pessoa.Email")
             
             @*<label for="senha">Senha</label>
-            <input id="senha" name="senha" />*@
+            <input id="senha" name="pessoa.Senha" />*@
+
+            @*<label for="permissao">Permissão</label>
+            <input id="permissao" name="Pessoa.Permissao" />*@
 
             <input type="submit" value="Cadastrar" />
 

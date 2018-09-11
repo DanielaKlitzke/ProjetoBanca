@@ -15,6 +15,7 @@
         <form action="/UnidadeMedida/Adiciona" method="post">
             <label for="tipo">Tipo de unidade de medida</label>
             <input id="tipo" name="unidadeMedida.TipoUnidadeMedida" />
+            @Html.ValidationMessage("unidadeMedida.TipoUnidadeMedida")
 
             <input type="submit" value="Cadastrar" />
         </form>

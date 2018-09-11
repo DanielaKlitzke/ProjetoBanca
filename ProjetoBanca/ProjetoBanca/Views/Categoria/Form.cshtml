@@ -13,8 +13,10 @@
 <body>
     <div>
         <form action="/Categoria/Adiciona" method="post">
+
             <label for="tipo">Tipo da categoria</label>
-            <input id="tipo" name="categoria.TipoCategoria" />
+            <input id="tipo" name="categoria.TipoCategoria" value="@ViewBag.categoria.TipoCategoria" />
+            @Html.ValidationMessage("categoria.TipoCategoria")
 
             <input type="submit" value="Cadastrar" />
         </form>

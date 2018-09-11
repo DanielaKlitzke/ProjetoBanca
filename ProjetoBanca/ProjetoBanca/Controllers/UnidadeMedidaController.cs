@@ -21,14 +21,23 @@ namespace ProjetoBanca.Controllers
 
         public ActionResult Form()
         {
+            ViewBag.UnidadeMedida = new UnidadeMedida();
             return View();
         }
 
         public ActionResult Adiciona(UnidadeMedida unidadeMedida)
         {
-            UnidadeMedidaDAO dao = new UnidadeMedidaDAO();
-            dao.Adicionar(unidadeMedida);
-            return RedirectToAction("Index", "UnidadeMedida");
+            if (ModelState.IsValid)
+            {
+                UnidadeMedidaDAO dao = new UnidadeMedidaDAO();
+                dao.Adicionar(unidadeMedida);
+                return RedirectToAction("Index", "UnidadeMedida");
+            }
+            else
+            {
+                ViewBag.UnidadeMedida = unidadeMedida;
+                return View("Form");
+            }
         }
     }
 }
