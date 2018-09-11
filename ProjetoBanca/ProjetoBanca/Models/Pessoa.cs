@@ -53,11 +53,7 @@ namespace ProjetoBanca.Models
 
         public String TipoPessoa { get; set; }
 
-        public Usuario IdUsuario { get; set; }
+        //public Usuario IdUsuario { get; set; }
 
-        public Pessoa()
-        {
-            this.IdUsuario = new Usuario();
-        }
     }
 }

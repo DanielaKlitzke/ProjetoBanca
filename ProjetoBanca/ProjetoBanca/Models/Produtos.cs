@@ -10,6 +10,8 @@ namespace ProjetoBanca.Models
     {
         [Key]
         public int IdProduto { get; set; }
+
+        [Required,]
         public int CodigoProduto { get; set; }
         public String NomeProduto { get; set; }
         public double ValorProduto { get; set; }

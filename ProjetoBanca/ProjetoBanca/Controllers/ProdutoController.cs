@@ -33,10 +33,20 @@ namespace ProjetoBanca.Controllers
 
         public ActionResult Adiciona(Produtos produtos )
         {
-            ProdutosDAO dao = new ProdutosDAO();
-            dao.Adicionar(produtos);
+            if (ModelState.IsValid)
+            {
+                ProdutosDAO dao = new ProdutosDAO();
+                dao.Adicionar(produtos);
 
-            return RedirectToAction("Index", "Produto");
+                return RedirectToAction("Index", "Produto");
+            }
+            else
+            {
+                CategoriaDAO categoriaDAO = new CategoriaDAO();
+                ViewBag.Categoria = categoriaDAO.ListarCategoria();
+                return View("Form");
+            }
+           
         }
     }
 }

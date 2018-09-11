@@ -28,15 +28,27 @@ namespace ProjetoBanca.Controllers
         {
             if (ModelState.IsValid)
             {
-                PessoaDAO dao = new PessoaDAO();
-                dao.Adicionar(pessoa);
-                return RedirectToAction("Index", "Pessoa");
+                if (informacoesValidas(pessoa))
+                {
+                    PessoaDAO dao = new PessoaDAO();
+                    dao.Adicionar(pessoa);
+                    return RedirectToAction("Index", "Pessoa");
+                }
+
             }
             else
             {
                 ViewBag.Pessoa = pessoa;
                 return View("Form");
             }
+        }
+        public bool informacoesValidas(Pessoa pessoa)
+        {
+            //if (pessoa.CpfOuCnpj. < 7) {
+            //    string mensgagem = 'Erro';
+            //    return false;
+            //}
+            return true;
         }
     }
 }
