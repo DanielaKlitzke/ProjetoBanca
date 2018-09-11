@@ -14,41 +14,41 @@ namespace ProjetoBanca.Models
         [Required, StringLength(20)]
         public String Nome { get; set; }
 
-        [Required]
+        //[Required]
         public String CpfOuCnpj { get; set; }
 
-        [Required, StringLength(7)]
+        //[Required, StringLength(7)]
         public String Rg { get; set; }
 
-        [Required]
+        //[Required]
         public String Sexo { get; set; }
 
-        [Required,StringLength(150)]
+        //[Required,StringLength(150)]
         public String Endereco { get; set; }
 
-        [Required, StringLength(80)]
+        //[Required, StringLength(80)]
         public String Bairro { get; set; }
 
         public int NumeroResidencial { get; set; }
 
-        [Required, StringLength(20)]
+        //[Required, StringLength(20)]
         public String Complemento { get; set; }
 
-        [Required, StringLength(100)]
+        //[Required, StringLength(100)]
         public String Cidade { get; set; }
 
-        [Required, StringLength(2)]
+        //[Required, StringLength(2)]
         public String Estado { get; set; }
 
-        [Required, StringLength(8)]
+        //[Required, StringLength(8)]
         public String Cep { get; set; }
 
-        [Required, StringLength(11)]
+        //[Required, StringLength(11)]
         public int Telefone { get; set; }
 
         public String DataNascimento { get; set; }
 
-        [Required, StringLength(100)]
+        //[Required, StringLength(100)]
         public String Email { get; set; }
 
         public String TipoPessoa { get; set; }

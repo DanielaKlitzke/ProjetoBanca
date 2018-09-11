@@ -15,16 +15,16 @@
         <form action="/Pessoa/Adiciona" method="post">
 
             <label for="nome">Nome</label>
-            <input id="nome" name="pessoa.Nome" value="@ViewBag.Pessoa.Nome"/>
+            <input id="nome" name="pessoa.Nome" />
             @Html.ValidationMessage("pessoa.Nome")
 
             <input type="radio" name="pessoa.TipoPessoa" value="1" checked> CPF
             <input type="radio" name="pessoa.TipoPessoa" value="2"> CNPJ
 
-            <input id="cpfoucnpj" name="pessoa.CpfOuCnpj" value="@ViewBag.Pessoa.CpfOuCnpj" />
+            <input id="cpfoucnpj" name="pessoa.CpfOuCnpj" />
 
             <label for="rg">RG</label>
-            <input id="rg" name="pessoa.Rg" value="@ViewBag.Pessoa.Rg" />
+            <input id="rg" name="pessoa.Rg" />
 
             <input type="radio" name="pessoa.Sexo" value="m" checked> MASCULINO
             <input type="radio" name="pessoa.Sexo" value="f"> FEMININO
