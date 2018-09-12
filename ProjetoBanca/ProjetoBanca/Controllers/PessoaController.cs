@@ -3,6 +3,7 @@ using ProjetoBanca.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 
@@ -28,13 +29,17 @@ namespace ProjetoBanca.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (informacoesValidas(pessoa))
+                if (InformacoesValidas(pessoa))
                 {
                     PessoaDAO dao = new PessoaDAO();
                     dao.Adicionar(pessoa);
                     return RedirectToAction("Index", "Pessoa");
                 }
-
+                else
+                {
+                    ViewBag.Pessoa = pessoa;
+                    return View("Form");
+                }                
             }
             else
             {
@@ -42,12 +47,45 @@ namespace ProjetoBanca.Controllers
                 return View("Form");
             }
         }
-        public bool informacoesValidas(Pessoa pessoa)
+        public bool InformacoesValidas(Pessoa pessoa)
         {
-            //if (pessoa.CpfOuCnpj. < 7) {
-            //    string mensgagem = 'Erro';
-            //    return false;
-            //}
+            Regex numeros = new Regex(@"^\d+$");
+            if (pessoa.TipoPessoa.Equals("1"))
+            {
+                if (!pessoa.CpfOuCnpj.Length.Equals(11))
+                {
+                    ModelState.AddModelError("pessoa.numerosamais", "Cpf tem que ter 11 números");
+                    return false;
+                }
+                if (!numeros.IsMatch(pessoa.CpfOuCnpj))
+                {
+                    ModelState.AddModelError("pessoa.somenteNumero", "CPf somente números");
+                    return false;
+                }
+            }
+            else
+            {
+                if (!pessoa.CpfOuCnpj.Length.Equals(14))
+                {
+                    ModelState.AddModelError("pessoa.numerosamaiscnpj", "Cnpj tem que ter 14 números");
+                    return false;
+                }
+                if (!numeros.IsMatch(pessoa.CpfOuCnpj))
+                {
+                    ModelState.AddModelError("pessoa.somenteNumerocnpj", "CNPJ somente números");
+                    return false;
+                }
+            }
+            if (!pessoa.Rg.Length.Equals(7))
+            {
+                ModelState.AddModelError("pessoa.rgnumerodifere", "RG tem que ter 7 números");
+                return false;
+            }
+            if (!numeros.IsMatch(pessoa.Rg))
+            {
+                ModelState.AddModelError("pessoa.somenteNumerorg", "RG somente números");
+                return false;
+            }
             return true;
         }
     }

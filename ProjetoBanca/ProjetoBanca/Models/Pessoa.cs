@@ -17,7 +17,7 @@ namespace ProjetoBanca.Models
         [Required]
         public String CpfOuCnpj { get; set; }
 
-        [Required, StringLength(7)]
+        [Required]
         public String Rg { get; set; }
 
         [Required]
@@ -46,7 +46,8 @@ namespace ProjetoBanca.Models
         [Required]
         public int Telefone { get; set; }
 
-        public String DataNascimento { get; set; }
+        //[Required]
+        //public String DataNascimento { get; set; }
 
         [Required, StringLength(100)]
         public String Email { get; set; }

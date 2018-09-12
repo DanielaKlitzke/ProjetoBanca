@@ -17,6 +17,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Nome</th>
+                    <th>Tipo</th>
                     <th>CPf ou CNPJ</th>
                     <th>RG</th>
                     <th>Sexo</th>
@@ -30,7 +31,7 @@
                     <th>Telefone</th>
                     <th>Data de Nascimento</th>
                     <th>Email</th>
-                    <th>Tipo</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +40,7 @@
                         <tr>
                             <td>@pessoa.IdPessoa</td>
                             <td>@pessoa.Nome</td>
+                            <td>@pessoa.TipoPessoa</td>
                             <td>@pessoa.CpfOuCnpj</td>
                             <td>@pessoa.Rg</td>
                             <td>@pessoa.Sexo</td>
@@ -48,10 +50,10 @@
                             <td>@pessoa.Complemento</td>
                             <td>@pessoa.Cidade</td>
                             <td>@pessoa.Estado</td>
+                            <td>@pessoa.Cep</td>
                             <td>@pessoa.Telefone</td>
-                            <td>@pessoa.DataNascimento</td>
+                            @*<td>@pessoa.DataNascimento</td>*@
                             <td>@pessoa.Email</td>
-                            <td>@pessoa.TipoPessoa</td>
                         </tr>
                     }
             </tbody>
