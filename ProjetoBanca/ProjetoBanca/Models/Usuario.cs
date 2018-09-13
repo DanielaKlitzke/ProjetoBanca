@@ -10,7 +10,10 @@ namespace ProjetoBanca.Models
     {
         [Key]
         public int IdUsuario { get; set; }
+
         public String Login { get; set; }
+
+        [Required]
         public String Senha { get; set; }
         public int Permissao { get; set; }
     }

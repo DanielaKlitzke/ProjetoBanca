@@ -33,7 +33,8 @@ namespace ProjetoBanca.Controllers
                 {
                     PessoaDAO dao = new PessoaDAO();
                     dao.Adicionar(pessoa);
-                    return RedirectToAction("Index", "Pessoa");
+                    
+                    return RedirectToAction("Form", "Usuario");
                 }
                 else
                 {
@@ -91,6 +92,7 @@ namespace ProjetoBanca.Controllers
                 ModelState.AddModelError("pessoa.somentenumerocep", "CEP somente números");
                 return false;
             }
+
             PessoaDAO dao = new PessoaDAO();
             IList<Pessoa> pessoas = dao.ListarPessoa();
             foreach (var cpfCnpj in pessoas)

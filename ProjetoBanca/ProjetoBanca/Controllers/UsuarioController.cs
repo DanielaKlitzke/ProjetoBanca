@@ -24,5 +24,17 @@ namespace ProjetoBanca.Controllers
             return View();
         }
 
+        public ActionResult Adiciona(Usuario usuario)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            dao.Adicionar(usuario);
+            return RedirectToAction("Index", "Produto");
+        }
+
+        public void RecebeCpfOuCnpj(Usuario usuario)
+        {
+            
+        }
+
     }
 }
