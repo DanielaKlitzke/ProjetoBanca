@@ -15,7 +15,15 @@
         <form action="Usuario/Adiciona" method="post">
 
             <label for="login">Login</label>
-            <input id="login" name=""
+            <input id="login" name="usuario.Login" />
+
+            <label for="senha">Senha</label>
+            <input id="senha" name="usuario.Senha" />
+
+            <input type="radio" name="usuario.Permissao" value="1" checked >Cliente
+            <input type="radio" name="usuario.Permissao" value="2" >Funcionário
+            <input type="radio" name="usuario.Permissao" value="3" >Administrador
+
         </form>
     </div>
 </body>

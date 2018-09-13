@@ -23,5 +23,6 @@ namespace ProjetoBanca.Controllers
         {
             return View();
         }
+
     }
 }
