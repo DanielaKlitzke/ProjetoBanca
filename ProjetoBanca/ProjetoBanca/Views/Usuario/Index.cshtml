@@ -11,8 +11,28 @@
     <title>Lista de Usuários</title>
 </head>
 <body>
-    <div> 
-
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Login</th>
+                    <th>Senha</th>
+                    <th>Permissão</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var usuario in ViewBag.Usuario)
+                {
+                    <tr>
+                        <td>@usuario.IdUsuario</td>
+                        <td>@usuario.Login</td>
+                        <td>@usuario.Senha</td>
+                        <td>@usuario.Permissao</td>                        
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
