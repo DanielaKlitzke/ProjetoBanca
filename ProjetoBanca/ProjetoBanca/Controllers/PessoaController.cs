@@ -86,6 +86,11 @@ namespace ProjetoBanca.Controllers
                 ModelState.AddModelError("pessoa.somenteNumerorg", "RG somente números");
                 return false;
             }
+            if (!numeros.IsMatch(pessoa.Cep))
+            {
+                ModelState.AddModelError("pessoa.somentenumerocep", "CEP somente números");
+                return false;
+            }
             return true;
         }
     }
