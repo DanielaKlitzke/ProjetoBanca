@@ -91,6 +91,16 @@ namespace ProjetoBanca.Controllers
                 ModelState.AddModelError("pessoa.somentenumerocep", "CEP somente números");
                 return false;
             }
+            PessoaDAO dao = new PessoaDAO();
+            IList<Pessoa> pessoas = dao.ListarPessoa();
+            foreach (var cpfCnpj in pessoas)
+            {
+                if (cpfCnpj.CpfOuCnpj.Equals(pessoa.CpfOuCnpj))
+                {
+                    ModelState.AddModelError("pessoa.pessoajacadastrada", "CPF ou CNPJ já cadastrados");
+                    return false;
+                }
+            }
             return true;
         }
     }
