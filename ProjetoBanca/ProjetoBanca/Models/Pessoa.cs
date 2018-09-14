@@ -43,7 +43,7 @@ namespace ProjetoBanca.Models
         [Required, StringLength(8)]
         public String Cep { get; set; }
 
-        [Required, StringLength(11)]
+        //[Required, StringLength(11)]
         public int Telefone { get; set; }
 
         //[Required]

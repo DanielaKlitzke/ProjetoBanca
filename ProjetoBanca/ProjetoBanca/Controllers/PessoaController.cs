@@ -51,8 +51,9 @@ namespace ProjetoBanca.Controllers
         public bool InformacoesValidas(Pessoa pessoa)
         {
             Regex numeros = new Regex(@"^\d+$");
-            Regex letras = new Regex(@"^[a-zA-Z]+$");
-            Regex email = new Regex(@"[a-z]?[0-9]?[@][a-z]?");
+            Regex letras = new Regex(@"^[a-zA-Z]+\s{1,}[a-zA-Z]*$");
+            Regex estado = new Regex(@"^[a-zA-Z]+$");
+            Regex email = new Regex(@"[a-z]?[0-9]?[@][a-z]+");
             if (pessoa.TipoPessoa.Equals("1"))
             {
                 if (!pessoa.CpfOuCnpj.Length.Equals(11))
@@ -99,7 +100,7 @@ namespace ProjetoBanca.Controllers
                 ModelState.AddModelError("pessoa.cidade", "Números não são válidos para Cidade");
                 return false;
             }
-            if (!letras.IsMatch(pessoa.Estado))
+            if (!estado.IsMatch(pessoa.Estado))
             {
                 ModelState.AddModelError("pessoa.estado", "Digite apenas a sigla do Estado");
                 return false;
