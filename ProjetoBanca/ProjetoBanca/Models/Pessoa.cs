@@ -50,7 +50,8 @@ namespace ProjetoBanca.Models
 
         [Required, StringLength(100)]
         public String Email { get; set; }
-
+        
+        [Required]
         public String TipoPessoa { get; set; }
 
         //public Usuario IdUsuario { get; set; }
