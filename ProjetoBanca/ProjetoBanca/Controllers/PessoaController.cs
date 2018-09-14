@@ -52,6 +52,7 @@ namespace ProjetoBanca.Controllers
         {
             Regex numeros = new Regex(@"^\d+$");
             Regex letras = new Regex(@"^[a-zA-Z]+$");
+            Regex email = new Regex(@"[a-z]?[0-9]?[@][a-z]?");
             if (pessoa.TipoPessoa.Equals("1"))
             {
                 if (!pessoa.CpfOuCnpj.Length.Equals(11))
@@ -101,6 +102,11 @@ namespace ProjetoBanca.Controllers
             if (!letras.IsMatch(pessoa.Estado))
             {
                 ModelState.AddModelError("pessoa.estado", "Digite apenas a sigla do Estado");
+                return false;
+            }
+            if (!email.IsMatch(pessoa.Email))
+            {
+                ModelState.AddModelError("pessoa.email", "Informe um email válido!");
                 return false;
             }
 

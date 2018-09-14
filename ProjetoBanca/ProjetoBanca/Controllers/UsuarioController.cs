@@ -31,10 +31,10 @@ namespace ProjetoBanca.Controllers
             return RedirectToAction("Index", "Produto");
         }
 
-        public void RecebeCpfOuCnpj(Usuario usuario)
-        {
+        //public void RecebeCpfOuCnpj(Usuario usuario)
+        //{
             
-        }
+        //}
 
     }
 }
