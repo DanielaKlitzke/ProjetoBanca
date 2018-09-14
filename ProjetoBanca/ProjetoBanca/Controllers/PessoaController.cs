@@ -97,17 +97,17 @@ namespace ProjetoBanca.Controllers
             }
             if (!cidade.IsMatch(pessoa.Cidade))
             {
-                ModelState.AddModelError("pessoa.cidade", "Números não são válidos para Cidade");
+                ModelState.AddModelError("pessoa.validacidade", "Números não são válidos para Cidade");
                 return false;
             }
             if (!estado.IsMatch(pessoa.Estado))
             {
-                ModelState.AddModelError("pessoa.estado", "Digite apenas a sigla do Estado");
+                ModelState.AddModelError("pessoa.validaestado", "Digite apenas a sigla do Estado");
                 return false;
             }
             if (!email.IsMatch(pessoa.Email))
             {
-                ModelState.AddModelError("pessoa.email", "Informe um email válido!");
+                ModelState.AddModelError("pessoa.validaemail", "Informe um email válido!");
                 return false;
             }
 
