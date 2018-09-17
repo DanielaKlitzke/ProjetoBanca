@@ -82,10 +82,14 @@
             @Html.ValidationMessage("pessoa.Email")
 
             <label for="senha">Senha</label>
-            <input type="password" name="pessoa.Senha" value="@ViewBag.Pessoa.Senha" />
-            @Html.ValidationMessage("pessoa.Senha");
+            <input type="password" name="pessoa.Senha" value="@ViewBag.Pessoa.Senha" /> <br />
+            @Html.ValidationMessage("pessoa.Senha")
 
-            <input type="submit" value="Continuar" />
+            <input type="radio" name="pessoa.Permissao" value="1" checked />Cliente
+            <input type="radio" name="pessoa.Permissao" value="2"  />Funcionário
+            <input type="radio" name="pessoa.Permissao" value="3"  />Administrador
+
+            <input type="submit" value="Cadastrar" />
 
         </form>
     </div>

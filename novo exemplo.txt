@@ -51,8 +51,9 @@ CREATE TABLE [dbo].[Pessoas] (
     [telefone]          INT           NULL,
     [dataNascimento]    VARCHAR (8)   NULL,
     [email]             VARCHAR (100) NULL,
-    [tipoPessoa]        INT     (1)   NULL,
+    [tipoPessoa]        INT           NULL,
     [senha]             VARCHAR (6)   NULL,
+    [permissao]         INT           NULL,
     PRIMARY KEY CLUSTERED ([idPessoa] ASC)
 );
 
