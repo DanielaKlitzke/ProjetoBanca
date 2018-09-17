@@ -52,7 +52,7 @@ namespace ProjetoBanca.Models
         public String Email { get; set; }
         
         [Required]
-        public String TipoPessoa { get; set; }
+        public int TipoPessoa { get; set; }
 
         [Required, StringLength(6)]
         public String Senha { get; set; }
