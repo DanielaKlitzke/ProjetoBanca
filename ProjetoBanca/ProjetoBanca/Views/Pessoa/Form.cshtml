@@ -81,6 +81,10 @@
             <input id="email" name="pessoa.Email" value="@ViewBag.Pessoa.Email" /><br />
             @Html.ValidationMessage("pessoa.Email")
 
+            <label for="senha">Senha</label>
+            <input type="password" name="pessoa.Senha" value="@ViewBag.Pessoa.Senha" />
+            @Html.ValidationMessage("pessoa.Senha");
+
             <input type="submit" value="Continuar" />
 
         </form>

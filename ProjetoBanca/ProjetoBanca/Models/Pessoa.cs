@@ -54,7 +54,10 @@ namespace ProjetoBanca.Models
         [Required]
         public String TipoPessoa { get; set; }
 
-        //public Usuario IdUsuario { get; set; }
+        [Required, StringLength(6)]
+        public String Senha { get; set; }
+                
+        public int Permissao { get; set; }
 
     }
 }
