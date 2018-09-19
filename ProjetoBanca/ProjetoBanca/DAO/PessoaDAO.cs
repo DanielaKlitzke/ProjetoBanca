@@ -33,6 +33,14 @@ namespace ProjetoBanca.DAO
             }
         }
 
+        public Pessoa Busca(string login, string senha)
+        {
+            using (var contexto = new PetContext())
+            {
+                return contexto.Pessoas.FirstOrDefault(u => u.CpfOuCnpj == login && u.Senha == senha);
+            }
+        }
+
         public void ExcluirPessoa(Pessoa pessoa)
         {
             using (var contexto = new PetContext())
@@ -50,6 +58,5 @@ namespace ProjetoBanca.DAO
                 contexto.SaveChanges();
             }
         }
-
     }
 }

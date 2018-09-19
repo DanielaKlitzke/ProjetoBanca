@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjetoBanca.DAO;
+using ProjetoBanca.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,9 +16,20 @@ namespace ProjetoBanca.Controllers
             return View();
         }
 
-        public ActionResult Autenticacao()
+        public ActionResult Autenticacao(String login, String senha)
         {
-            return View();
+            PessoaDAO dao = new PessoaDAO();
+            Pessoa pessoa = dao.Busca(login, senha);
+            if (pessoa != null)
+            {
+                Session["pessoaLogada"] = pessoa;
+                return RedirectToAction("Index", "Produto");
+            }
+            else
+            {
+                return View("Index");
+            }
+            
         }
     }
 }
