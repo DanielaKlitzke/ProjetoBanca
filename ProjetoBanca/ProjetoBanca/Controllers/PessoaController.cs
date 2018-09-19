@@ -54,6 +54,13 @@ namespace ProjetoBanca.Controllers
             Regex letrasComEspaco = new Regex(@"^[a-zA-Z]+\s*[a-zA-Z]*$");
             Regex letras = new Regex(@"^[a-zA-Z]+$");
             Regex email = new Regex(@"[a-z]?[0-9]?[@][a-z]+");
+
+            if (CpfDuplicado(pessoa))
+            {
+                ModelState.AddModelError("pessoa.numerosamais", "Jé existe outra pessoa com este CPF/CNPJ");
+                return false;
+            }
+
             if (pessoa.TipoPessoa.Equals("1"))
             {
                 if (!pessoa.CpfOuCnpj.Length.Equals(11))
@@ -95,7 +102,7 @@ namespace ProjetoBanca.Controllers
                 ModelState.AddModelError("pessoa.somentenumerocep", "CEP somente números");
                 return false;
             }
-            if (!letrasComEspaco.IsMatch(pessoa.Cidade))
+            if (pessoa.Cidade.Trim(' ').Equals(string.Empty))
             {
                 ModelState.AddModelError("pessoa.validacidade", "Números não são válidos para Cidade");
                 return false;
@@ -111,17 +118,18 @@ namespace ProjetoBanca.Controllers
                 return false;
             }
 
-            PessoaDAO dao = new PessoaDAO();
-            IList<Pessoa> pessoas = dao.ListarPessoa();
-            foreach (var cpfCnpj in pessoas)
-            {
-                if (cpfCnpj.CpfOuCnpj.Equals(pessoa.CpfOuCnpj))
-                {
-                    ModelState.AddModelError("pessoa.pessoajacadastrada", "CPF ou CNPJ já cadastrados");
-                    return false;
-                }
-            }
+
             return true;
+        }
+
+        public bool CpfDuplicado(Pessoa pPessoa)
+        {
+            PessoaDAO dao = new PessoaDAO();
+            var pessoa = dao.BuscaPorCpfOuCnpj(pPessoa.CpfOuCnpj);
+            if (pessoa != null && pPessoa.IdPessoa != pessoa.IdPessoa )
+                return true;
+
+            return false;
         }
     }
 }

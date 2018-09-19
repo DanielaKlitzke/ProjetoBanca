@@ -41,6 +41,14 @@ namespace ProjetoBanca.DAO
             }
         }
 
+        public Pessoa BuscaPorCpfOuCnpj(string cpfCnpj)
+        {
+            using (var contexto = new PetContext())
+            {
+                return contexto.Pessoas.FirstOrDefault(u => u.CpfOuCnpj == cpfCnpj);
+            }
+        }
+
         public void ExcluirPessoa(Pessoa pessoa)
         {
             using (var contexto = new PetContext())
