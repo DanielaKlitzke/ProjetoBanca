@@ -176,12 +176,10 @@
     <Compile Include="Controllers\PessoaController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Controllers\UnidadeMedidaController.cs" />
-    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAO\CategoriaDAO.cs" />
     <Compile Include="DAO\EstoqueDAO.cs" />
     <Compile Include="DAO\ProdutosDAO.cs" />
     <Compile Include="DAO\UnidadeMedidaDAO.cs" />
-    <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="DAO\PetContext.cs" />
     <Compile Include="DAO\PessoaDAO.cs" />
     <Compile Include="Global.asax.cs">
@@ -189,7 +187,6 @@
     </Compile>
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Estoque.cs" />
-    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\Produtos.cs" />
     <Compile Include="Models\UnidadeMedida.cs" />
