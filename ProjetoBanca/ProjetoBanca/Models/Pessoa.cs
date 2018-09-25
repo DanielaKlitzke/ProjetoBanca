@@ -45,9 +45,6 @@ namespace ProjetoBanca.Models
 
         public int Telefone { get; set; }
 
-        //[Required]
-        //public String DataNascimento { get; set; }
-
         [Required, StringLength(100)]
         public String Email { get; set; }
         
