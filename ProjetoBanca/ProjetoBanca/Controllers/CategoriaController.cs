@@ -39,5 +39,11 @@ namespace ProjetoBanca.Controllers
                 return View("Form");
             }           
         }
+
+        //public bool ValidarCategoria(Categoria categoria)
+        //{
+
+        //    return true;
+        //}
     }
 }
