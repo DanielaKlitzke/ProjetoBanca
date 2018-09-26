@@ -33,6 +33,14 @@ namespace ProjetoBanca.DAO
             }
         }
 
+        public Produtos Busca(string codigo)
+        {
+            using (var contexto = new PetContext())
+            {
+                return contexto.Produtos.FirstOrDefault(u => u.CodigoProduto == codigo);
+            }
+        }
+
         public void ExcluirProduto(Produtos produtos)
         {
             using (var contexto = new PetContext())
@@ -51,6 +59,11 @@ namespace ProjetoBanca.DAO
                 contexto.Produtos.Update(produto);
                 contexto.SaveChanges();
             }
+        }
+
+        public static implicit operator ProdutosDAO(PessoaDAO v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -127,8 +127,9 @@ namespace ProjetoBanca.Controllers
             PessoaDAO dao = new PessoaDAO();
             var pessoa = dao.BuscaPorCpfOuCnpj(pPessoa.CpfOuCnpj);
             if (pessoa != null && pPessoa.IdPessoa != pessoa.IdPessoa )
+            {
                 return true;
-
+            }
             return false;
         }
     }
