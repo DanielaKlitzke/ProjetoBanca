@@ -17,7 +17,7 @@ namespace ProjetoBanca.Controllers
             ProdutosDAO dao = new ProdutosDAO();
             IList<Produtos> produtos = dao.ListarProduto();
             ViewBag.Produto = produtos;
-            return View();
+            return View(produtos);
         }
 
         public ActionResult Form()
@@ -82,5 +82,13 @@ namespace ProjetoBanca.Controllers
             }
             return false;
         }
+
+        //public ActionResult Visualiza(int id)
+        //{
+        //    ProdutosDAO dao = new ProdutosDAO();
+        //    Produtos produtos = dao.BuscaPorId(id);
+        //    ViewBag.Produto = produtos;
+        //    return View();
+        //}
     }
 }
