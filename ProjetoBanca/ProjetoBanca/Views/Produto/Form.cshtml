@@ -1,17 +1,4 @@
 ﻿
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Cadastro de Produtos</title>
-</head>
-<body>
-    <div>
         <form action="/Produto/Adiciona" method="post">
             @Html.ValidationMessage("produtos.codigoComNumero")
             @Html.ValidationMessage("produtos.valorNegativo")
@@ -57,6 +44,3 @@
 
             <input type="submit" value="Cadastrar" />
         </form>
-    </div>
-</body>
-</html>
