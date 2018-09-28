@@ -1,7 +1,6 @@
-﻿
-        <form action="/Produto/Adiciona" method="post">
-            @Html.ValidationMessage("produtos.codigoComNumero")
-            @Html.ValidationMessage("produtos.valorNegativo")
+﻿        <form action="/Produto/Adiciona" method="post">
+            @*@Html.ValidationMessage("produtos.codigoComNumero")
+            @Html.ValidationMessage("produtos.valorNegativo")*@
 
             <label for="codigo">Código</label>
             <input id="codigo" name="produto.CodigoProduto" value="@ViewBag.Produtos.CodigoProduto"/>

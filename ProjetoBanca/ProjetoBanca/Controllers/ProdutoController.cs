@@ -34,12 +34,12 @@ namespace ProjetoBanca.Controllers
 
         public ActionResult Adiciona(Produtos produtos )
         {
-            object logado = Session["pessoaLogada"];
+            //object logado = Session["pessoaLogada"];
             //PessoaDAO pdao = new PessoaDAO();
             //Pessoa pessoa = new Pessoa();
             //var permissao = pdao.BuscaPorPermissao(pessoa.Permissao);
-            if (logado != null)
-            {
+            //if (logado != null)
+            //{
                 if (ModelState.IsValid)
                 {
                     if (ValidaProduto(produtos))
@@ -61,11 +61,11 @@ namespace ProjetoBanca.Controllers
                     ViewBag.Categoria = categoriaDAO.ListarCategoria();
                     return View("Form");
                 }
-            }
-            else
-            {
-                return RedirectToAction("Index", "Login");
-            }
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Index", "Login");
+            //}
             
         }
         public bool ValidaProduto(Produtos produtos)
