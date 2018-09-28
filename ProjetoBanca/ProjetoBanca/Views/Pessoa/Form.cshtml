@@ -1,17 +1,4 @@
 ﻿
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Cadastro de Pessoa</title>
-</head>
-<body>
-    <div>
         <form action="/Pessoa/Adiciona" method="post">
             @Html.ValidationMessage("pessoa.numerosamais")
             @Html.ValidationMessage("pessoa.somenteNumero")
@@ -26,59 +13,59 @@
             @Html.ValidationMessage("pessoa.validaemail")
 
             <label for="nome">Nome</label>
-            <input id="nome" name="pessoa.Nome" value="@ViewBag.Pessoa.Nome" /><br />
+            <input id="nome" name="pessoa.Nome" value="@ViewBag.Pessoa.Nome" class="form-control"/>
             @Html.ValidationMessage("pessoa.Nome")
 
             <input type="radio" name="pessoa.TipoPessoa" value="1" checked> CPF
             <input type="radio" name="pessoa.TipoPessoa" value="2"> CNPJ<br />
 
-            <input id="cpfoucnpj" name="pessoa.CpfOuCnpj" value="@ViewBag.Pessoa.CpfOuCnpj" /><br />
+            <input id="cpfoucnpj" name="pessoa.CpfOuCnpj" value="@ViewBag.Pessoa.CpfOuCnpj" class="form-control"/>
             @Html.ValidationMessage("pessoa.CpfOuCnpj")
 
             <label for="rg">RG</label>
-            <input id="rg" name="pessoa.Rg" value="@ViewBag.Pessoa.Rg" /><br />
+            <input id="rg" name="pessoa.Rg" value="@ViewBag.Pessoa.Rg" class="form-control"/>
             @Html.ValidationMessage("pessoa.Rg")
 
             <input type="radio" name="pessoa.Sexo" value="m" checked> MASCULINO
             <input type="radio" name="pessoa.Sexo" value="f"> FEMININO<br />
 
             <label for="endereco">Endereço</label>
-            <input id="endereco" name="pessoa.Endereco" value="@ViewBag.Pessoa.Endereco" /><br />
+            <input id="endereco" name="pessoa.Endereco" value="@ViewBag.Pessoa.Endereco" class="form-control"/>
             @Html.ValidationMessage("pessoa.Endereco")
 
             <label for="bairro">Bairro</label>
-            <input id="bairro" name="pessoa.Bairro" value="@ViewBag.Pessoa.Bairro" /><br />
+            <input id="bairro" name="pessoa.Bairro" value="@ViewBag.Pessoa.Bairro" class="form-control"/>
             @Html.ValidationMessage("pessoa.Bairro")
 
             <label for="numeroResidencia">Número</label>
-            <input id="numeroResidencia" name="pessoa.NumeroResidencial" value="@ViewBag.Pessoa.NumeroResidencial" /><br />
+            <input id="numeroResidencia" name="pessoa.NumeroResidencial" value="@ViewBag.Pessoa.NumeroResidencial" class="form-control"/>
 
             <label for="complemento">Complemento</label>
-            <input id="complemento" name="pessoa.Complemento" value="@ViewBag.Pessoa.Complemento" /><br />
+            <input id="complemento" name="pessoa.Complemento" value="@ViewBag.Pessoa.Complemento" class="form-control"/>
             @Html.ValidationMessage("pessoa.Complemento")
 
             <label for="cidade">Cidade</label>
-            <input id="cidade" name="pessoa.Cidade" value="@ViewBag.Pessoa.Cidade" /><br />
+            <input id="cidade" name="pessoa.Cidade" value="@ViewBag.Pessoa.Cidade" class="form-control"/>
             @Html.ValidationMessage("pessoa.Cidade")
 
             <label for="estado">Estado</label>
-            <input id="estado" name="pessoa.Estado" value="@ViewBag.Pessoa.Estado" /><br />
+            <input id="estado" name="pessoa.Estado" value="@ViewBag.Pessoa.Estado" class="form-control"/>
             @Html.ValidationMessage("pessoa.Estado")
 
             <label for="cep">CEP</label>
-            <input id="cep" name="pessoa.Cep" value="@ViewBag.Pessoa.Cep" /><br />
+            <input id="cep" name="pessoa.Cep" value="@ViewBag.Pessoa.Cep" class="form-control"/>
             @Html.ValidationMessage("pessoa.Cep")
 
             <label for="telefone">Telefone</label>
-            <input id="telefone" name="pessoa.Telefone" value="@ViewBag.Pessoa.Telefone" /><br />
+            <input id="telefone" name="pessoa.Telefone" value="@ViewBag.Pessoa.Telefone" class="form-control"/>
             @Html.ValidationMessage("pessoa.Telefone")
 
             <label for="email">Email</label>
-            <input id="email" name="pessoa.Email" value="@ViewBag.Pessoa.Email" /><br />
+            <input id="email" name="pessoa.Email" value="@ViewBag.Pessoa.Email" class="form-control"/>
             @Html.ValidationMessage("pessoa.Email")
 
             <label for="senha">Senha</label>
-            <input type="password" name="pessoa.Senha" value="@ViewBag.Pessoa.Senha" /> <br />
+            <input type="password" name="pessoa.Senha" value="@ViewBag.Pessoa.Senha" class="form-control"/> 
             @Html.ValidationMessage("pessoa.Senha")
 
             <input type="radio" name="pessoa.Permissao" value="1" checked />Cliente
@@ -88,6 +75,3 @@
             <input type="submit" value="Cadastrar" />
 
         </form>
-    </div>
-</body>
-</html>
