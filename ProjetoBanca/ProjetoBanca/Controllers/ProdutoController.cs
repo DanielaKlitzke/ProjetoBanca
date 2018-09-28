@@ -42,7 +42,7 @@ namespace ProjetoBanca.Controllers
             //{
                 if (ModelState.IsValid)
                 {
-                    if (ValidaProduto(produtos))
+                    if (true)//ValidaProduto(produtos))
                     {
                         ProdutosDAO dao = new ProdutosDAO();
                         dao.Adicionar(produtos);
@@ -68,21 +68,21 @@ namespace ProjetoBanca.Controllers
             //}
             
         }
-        public bool ValidaProduto(Produtos produtos)
-        {
-            Regex letras = new Regex(@"^[a-zA-Z]+$");
-            if (!letras.IsMatch(produtos.CodigoProduto))
-            {
-                ModelState.AddModelError("produtos.codigoComNumero", "Código: Somente números");
-                return false;
-            }
-            if (produtos.ValorProduto < 0)
-            {
-                ModelState.AddModelError("produtos.valorNegativo","Valor não pode ser negativo");
-                return false;
-            }
-            return true;
-        }
+        //public bool ValidaProduto(Produtos produtos)
+        //{
+        //    Regex letras = new Regex(@"^[a-zA-Z]+$");
+        //    if (!letras.IsMatch(produtos.CodigoProduto))
+        //    {
+        //        ModelState.AddModelError("produtos.codigoComNumero", "Código: Somente números");
+        //        return false;
+        //    }
+        //    if (produtos.ValorProduto < 0)
+        //    {
+        //        ModelState.AddModelError("produtos.valorNegativo","Valor não pode ser negativo");
+        //        return false;
+        //    }
+        //    return true;
+        //}
 
         public bool CodigoDuplicado(Produtos produtos)
         {
