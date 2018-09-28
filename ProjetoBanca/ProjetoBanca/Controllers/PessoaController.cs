@@ -74,7 +74,7 @@ namespace ProjetoBanca.Controllers
                     return false;
                 }
             }
-            else
+            if(pessoa.TipoPessoa.Equals("2"))
             {
                 if (!pessoa.CpfOuCnpj.Length.Equals(14))
                 {
