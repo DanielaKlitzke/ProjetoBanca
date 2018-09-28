@@ -34,6 +34,18 @@ namespace ProjetoBanca.Controllers
 
         public ActionResult Adiciona(Produtos produtos )
         {
+            object logado = Session["pessoaLogada"];
+            PessoaDAO pdao = new PessoaDAO();
+            var permissao = pdao.BuscaPorPermissao(Permissao);
+            if ((logado != null) && (permissao))
+            {
+
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
             if (ModelState.IsValid)
             {
                 if (ValidaProduto(produtos))
