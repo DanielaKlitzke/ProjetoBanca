@@ -4,19 +4,19 @@
             @Html.ValidationMessage("produtos.valorNegativo")
 
             <label for="codigo">Código</label>
-            <input id="codigo" name="produto.CodigoProduto" @ViewBag.Produtos.CodigoProduto/>
+            <input id="codigo" name="produto.CodigoProduto" value="@ViewBag.Produtos.CodigoProduto"/>
             @Html.ValidationMessage("produtos.CodigoProduto");
 
             <label for="nome">Nome</label>
-            <input id="nome" name="produto.NomeProduto" @ViewBag.Produtos.NomeProduto/>
+            <input id="nome" name="produto.NomeProduto" value="@ViewBag.Produtos.NomeProduto"/>
             @Html.ValidationMessage("produtos.Nome")
 
             <label for="valor">Valor</label>
-            <input id="valor" name="produto.ValorProduto" @ViewBag.Produtos.ValorProduto/>
+            <input id="valor" name="produto.ValorProduto" value="@ViewBag.Produtos.ValorProduto"/>
             @Html.ValidationMessage("produtos.ValorProduto")
 
             <label for="descricao">Descrição</label>
-            <input id="descricao" name="produto.DescricaoProduto" @ViewBag.Produtos.DescricaoProduto/>
+            <input id="descricao" name="produto.DescricaoProduto" value="@ViewBag.Produtos.DescricaoProduto"/>
             @Html.ValidationMessage("produtos.DescricaoProduto")
 
             <label for="unidadeMedida">Unidade de Medida</label>
@@ -28,7 +28,7 @@
             </select>
 
             <label for="medida">Medida</label>
-            <input id="medida" name="produto.Medida" @ViewBag.Produtos.Medida/>
+            <input id="medida" name="produto.Medida" value="@ViewBag.Produtos.Medida"/>
             @Html.ValidationMessage("produtos.Medida")
 
             <label for="Categoria">Categoria</label>
