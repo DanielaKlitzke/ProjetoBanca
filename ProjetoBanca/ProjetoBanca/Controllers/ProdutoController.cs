@@ -35,38 +35,38 @@ namespace ProjetoBanca.Controllers
         public ActionResult Adiciona(Produtos produtos )
         {
             object logado = Session["pessoaLogada"];
-            PessoaDAO pdao = new PessoaDAO();
-            var permissao = pdao.BuscaPorPermissao(Permissao);
-            if ((logado != null) && (permissao))
+            //PessoaDAO pdao = new PessoaDAO();
+            //Pessoa pessoa = new Pessoa();
+            //var permissao = pdao.BuscaPorPermissao(pessoa.Permissao);
+            if (logado != null)
             {
-
-            }
-            else
-            {
-                return RedirectToAction("Index", "Login");
-            }
-
-            if (ModelState.IsValid)
-            {
-                if (ValidaProduto(produtos))
+                if (ModelState.IsValid)
                 {
-                    ProdutosDAO dao = new ProdutosDAO();
-                    dao.Adicionar(produtos);
+                    if (ValidaProduto(produtos))
+                    {
+                        ProdutosDAO dao = new ProdutosDAO();
+                        dao.Adicionar(produtos);
 
-                    return RedirectToAction("Index", "Produto");
+                        return RedirectToAction("Index", "Produto");
+                    }
+                    else
+                    {
+                        ViewBag.Produtos = produtos;
+                        return View("Form");
+                    }
                 }
                 else
                 {
-                    ViewBag.Produtos = produtos;
+                    CategoriaDAO categoriaDAO = new CategoriaDAO();
+                    ViewBag.Categoria = categoriaDAO.ListarCategoria();
                     return View("Form");
                 }
             }
             else
             {
-                CategoriaDAO categoriaDAO = new CategoriaDAO();
-                ViewBag.Categoria = categoriaDAO.ListarCategoria();
-                return View("Form");
-            }           
+                return RedirectToAction("Index", "Login");
+            }
+            
         }
         public bool ValidaProduto(Produtos produtos)
         {
