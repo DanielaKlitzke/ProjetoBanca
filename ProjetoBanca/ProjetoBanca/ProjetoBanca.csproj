@@ -209,7 +209,6 @@
     <Content Include="Views\Pessoa\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Contador\Index.cshtml" />
-    <Content Include="Views\Produto\Visualiza.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">

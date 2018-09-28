@@ -82,13 +82,5 @@ namespace ProjetoBanca.Controllers
             }
             return false;
         }
-
-        //public ActionResult Visualiza(int id)
-        //{
-        //    ProdutosDAO dao = new ProdutosDAO();
-        //    Produtos produtos = dao.BuscaPorId(id);
-        //    ViewBag.Produto = produtos;
-        //    return View();
-        //}
     }
 }
