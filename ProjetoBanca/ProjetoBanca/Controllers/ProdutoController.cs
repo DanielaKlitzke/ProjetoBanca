@@ -22,6 +22,24 @@ namespace ProjetoBanca.Controllers
 
         public ActionResult Form()
         {
+            object logado = Session["pessoaLogada"];
+            if (logado != null)
+            {
+
+                CarregarViewBag();
+                ViewBag.Produtos = new Produtos();
+                return View();
+
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+
+            }
+        }
+
+        public void CarregarViewBag()
+        {
             UnidadeMedidaDAO unidadeDao = new UnidadeMedidaDAO();
             IList<UnidadeMedida> unidades = unidadeDao.ListarUnidadeMedida();
             ViewBag.UnidadeMedidas = unidades;
@@ -29,17 +47,12 @@ namespace ProjetoBanca.Controllers
             CategoriaDAO categoriaDao = new CategoriaDAO();
             IList<Categoria> categorias = categoriaDao.ListarCategoria();
             ViewBag.Categorias = categorias;
-
-            ViewBag.Produtos = new Produtos();
-            return View();           
         }
 
         public ActionResult Adiciona(Produtos produtos)
         {
-            object logado = Session["pessoaLogada"];
-            if (logado != null)
-            {
-                if (ModelState.IsValid)
+            CarregarViewBag();
+            if (ModelState.IsValid)
                 {
                     if (ValidaProduto(produtos))
                     {
@@ -59,12 +72,7 @@ namespace ProjetoBanca.Controllers
                     ViewBag.Produtos = produtos;
                     return View("Form");
                 }
-            }
-            else
-            {
-                return RedirectToAction("Index", "Login");
-
-            }
+            
         }
         public bool ValidaProduto(Produtos produtos)
         {

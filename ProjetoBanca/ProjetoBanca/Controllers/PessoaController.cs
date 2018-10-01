@@ -63,7 +63,7 @@ namespace ProjetoBanca.Controllers
 
             if (pessoa.TipoPessoa.Equals("1"))
             {
-                if (!pessoa.CpfOuCnpj.Length.Equals(11))
+                if (pessoa.CpfOuCnpj.Length !=11 )
                 {
                     ModelState.AddModelError("pessoa.numerosamais", "Cpf tem que ter 11 números");
                     return false;
@@ -74,7 +74,7 @@ namespace ProjetoBanca.Controllers
                     return false;
                 }
             }
-            if(pessoa.TipoPessoa.Equals("2"))
+            else
             {
                 if (!pessoa.CpfOuCnpj.Length.Equals(14))
                 {
