@@ -83,15 +83,15 @@ namespace ProjetoBanca.Controllers
                 return true;
             }
 
-         public bool CodigoDuplicado(Produtos produtos)
-            {
-                ProdutosDAO dao = new ProdutosDAO();
-                var produto = dao.Busca(produtos.CodigoProduto);
-                if (produto != null && produtos.CodigoProduto != produto.CodigoProduto)
-                {
-                    return true;
-                }
-                return false;
-            }
+         //public bool CodigoDuplicado(Produtos produtos)
+         //   {
+         //       ProdutosDAO dao = new ProdutosDAO();
+         //       var produto = dao.Busca(produtos.CodigoProduto);
+         //       if (produto != null && produtos.CodigoProduto != produto.CodigoProduto)
+         //       {
+         //           return true;
+         //       }
+         //       return false;
+         //   }
     }
 }
