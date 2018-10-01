@@ -42,7 +42,7 @@ namespace ProjetoBanca.Controllers
             //{
                 if (ModelState.IsValid)
                 {
-                    if (true)//ValidaProduto(produtos))
+                    if (ValidaProduto(produtos))
                     {
                         ProdutosDAO dao = new ProdutosDAO();
                         dao.Adicionar(produtos);
@@ -61,38 +61,37 @@ namespace ProjetoBanca.Controllers
                     ViewBag.Categoria = categoriaDAO.ListarCategoria();
                     return View("Form");
                 }
-            //}
             //else
             //{
             //    return RedirectToAction("Index", "Login");
             //}
-            
-        }
-        //public bool ValidaProduto(Produtos produtos)
-        //{
-        //    Regex letras = new Regex(@"^[a-zA-Z]+$");
-        //    if (!letras.IsMatch(produtos.CodigoProduto))
-        //    {
-        //        ModelState.AddModelError("produtos.codigoComNumero", "Código: Somente números");
-        //        return false;
-        //    }
-        //    if (produtos.ValorProduto < 0)
-        //    {
-        //        ModelState.AddModelError("produtos.valorNegativo","Valor não pode ser negativo");
-        //        return false;
-        //    }
-        //    return true;
-        //}
 
-        public bool CodigoDuplicado(Produtos produtos)
-        {
-            ProdutosDAO dao = new ProdutosDAO();
-            var produto = dao.Busca(produtos.CodigoProduto);
-            if (produto != null && produtos.CodigoProduto != produto.CodigoProduto)
+            }
+            public bool ValidaProduto(Produtos produtos)
             {
+                Regex letras = new Regex(@"^[a-zA-Z]+$");
+                if (!letras.IsMatch(produtos.CodigoProduto))
+                {
+                    ModelState.AddModelError("produtos.codigoComNumero", "Código: Somente números");
+                    return false;
+                }
+                if (produtos.ValorProduto < 0)
+                {
+                    ModelState.AddModelError("produtos.valorNegativo", "Valor não pode ser negativo");
+                    return false;
+                }
                 return true;
             }
-            return false;
-        }
+
+         public bool CodigoDuplicado(Produtos produtos)
+            {
+                ProdutosDAO dao = new ProdutosDAO();
+                var produto = dao.Busca(produtos.CodigoProduto);
+                if (produto != null && produtos.CodigoProduto != produto.CodigoProduto)
+                {
+                    return true;
+                }
+                return false;
+            }
     }
 }
