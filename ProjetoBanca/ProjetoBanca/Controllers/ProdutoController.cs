@@ -29,6 +29,8 @@ namespace ProjetoBanca.Controllers
             CategoriaDAO categoriaDao = new CategoriaDAO();
             IList<Categoria> categorias = categoriaDao.ListarCategoria();
             ViewBag.Categorias = categorias;
+
+            ViewBag.Produtos = new Produtos();
             return View();           
         }
 
