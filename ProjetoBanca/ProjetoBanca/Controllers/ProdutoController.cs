@@ -57,9 +57,8 @@ namespace ProjetoBanca.Controllers
                 }
                 else
                 {
-                    CategoriaDAO categoriaDAO = new CategoriaDAO();
-                    ViewBag.Categoria = categoriaDAO.ListarCategoria();
-                    return View("Form");
+                ViewBag.Produtos = produtos;
+                return View("Form");                
                 }
             //else
             //{
