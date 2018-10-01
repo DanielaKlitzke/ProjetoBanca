@@ -1,46 +1,48 @@
 ﻿
-        <form action="/Produto/Adiciona" method="post">
-            @Html.ValidationMessage("produtos.codigoComNumero")
-            @Html.ValidationMessage("produtos.valorNegativo")
+<form action="/Produto/Adiciona" method="post">
+    @Html.ValidationMessage("produtos.codigoComNumero")
+    @Html.ValidationMessage("produtos.valorNegativo")
 
-            <label for="codigo">Código</label>
-            <input id="codigo" name="produtos.CodigoProduto" value="@ViewBag.Produtos.CodigoProduto" />
-            @Html.ValidationMessage("produtos.CodigoProduto")
+    <label for="codigo">Código</label>
+    <input id="codigo" name="produtos.CodigoProduto" value="@ViewBag.Produtos.CodigoProduto" />
+    @Html.ValidationMessage("produtos.CodigoProduto")
 
-            <label for="nome">Nome</label>
-            <input id="nome" name="produtos.NomeProduto" value="@ViewBag.Produtos.NomeProduto" />
-            @Html.ValidationMessage("produtos.NomeProduto")
+    <label for="nome">Nome</label>
+    <input id="nome" name="produtos.NomeProduto" value="@ViewBag.Produtos.NomeProduto" />
+    @Html.ValidationMessage("produtos.NomeProduto")
 
-            <label for="valor">Valor</label>
-            <input id="valor" name="produtos.ValorProduto" value="@ViewBag.Produtos.ValorProduto" />
-            @Html.ValidationMessage("produtos.ValorProduto")
+    <label for="valor">Valor</label>
+    <input id="valor" name="produtos.ValorProduto" value="@ViewBag.Produtos.ValorProduto" />
+    @Html.ValidationMessage("produtos.ValorProduto")
 
-            <label for="descricao">Descrição</label>
-            <input id="descricao" name="produtos.DescricaoProduto" value="@ViewBag.Produtos.DescricaoProduto" />
-            @Html.ValidationMessage("produtos.DescricaoProduto")
+    <label for="descricao">Descrição</label>
+    <input id="descricao" name="produtos.DescricaoProduto" value="@ViewBag.Produtos.DescricaoProduto" />
+    @Html.ValidationMessage("produtos.DescricaoProduto")
 
-            <label for="unidadeMedida">Unidade de Medida</label>
-            <select id="unidadeMedida" name="produtos.IdUnidadeMedida">
-                @foreach (var unidade in ViewBag.UnidadeMedidas)
-                {
-                    <option value="@unidade.IdUnidadeMedida">@unidade.TipoUnidadeMedida</option>
-                }
-            </select>
+    <label for="unidadeMedida">Unidade de Medida</label>
+    <select id="unidadeMedida" name="produtos.IdUnidadeMedida">
+        @foreach (var unidade in ViewBag.UnidadeMedidas)
+        {
+            <option value="@unidade.IdUnidadeMedida">@unidade.TipoUnidadeMedida</option>
+        }
+    </select>
 
-            <label for="medida">Medida</label>
-            <input id="medida" name="produtos.Medida" value="@ViewBag.Produtos.Medida" />
-            @Html.ValidationMessage("produtos.Medida")
+    <label for="medida">Medida</label>
+    <input id="medida" name="produtos.Medida" value="@ViewBag.Produtos.Medida" />
+    @Html.ValidationMessage("produtos.Medida")
 
-            <label for="Categoria">Categoria</label>
-            <select id="categoria" name="produtos.IdCategoria">
-                @foreach (var categoria in ViewBag.Categorias)
-                {
-                    <option value="@categoria.IdCategoria">@categoria.TipoCategoria</option>
-                }
-            </select>
+    <label for="Categoria">Categoria</label>
+    <select id="categoria" name="produtos.IdCategoria">
+        @foreach (var categoria in ViewBag.Categorias)
+        {
+            <option value="@categoria.IdCategoria">@categoria.TipoCategoria</option>
+        }
+    </select>
 
-            <label for="ativo">Ativo</label>
-            <input id="ativo" name="produtos.AtivoNaoAtivo" value="@ViewBag.Produtos.AtivoNaoAtivo"/>
+    <label for="ativo">Ativo</label>
+    <input type="radio" name="produtos.AtivoNaoAtivo" value="1" checked> Ativo
+    <input type="radio" name="produtos.AtivoNaoAtivo" value="2"> Não Ativo<br />
+    <input id="ativo" name="produtos.AtivoNaoAtivo" value="@ViewBag.Produtos.AtivoNaoAtivo" />
 
-            <input type="submit" value="Cadastrar" />
-        </form>
+    <input type="submit" value="Cadastrar" />
+</form>

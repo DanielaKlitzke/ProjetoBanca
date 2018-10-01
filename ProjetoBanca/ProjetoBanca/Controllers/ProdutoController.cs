@@ -57,30 +57,29 @@ namespace ProjetoBanca.Controllers
                 }
                 else
                 {
-                ViewBag.Produtos = produtos;
-                return View("Form");                
+                    ViewBag.Produtos = produtos;
+                    return View("Form");                
                 }
             //else
             //{
             //    return RedirectToAction("Index", "Login");
             //}
-
-            }
-            public bool ValidaProduto(Produtos produtos)
+        }
+        public bool ValidaProduto(Produtos produtos)
+        {
+            Regex letras = new Regex(@"^[a-zA-Z]+$");
+            if (!letras.IsMatch(produtos.CodigoProduto))
             {
-                Regex letras = new Regex(@"^[a-zA-Z]+$");
-                if (!letras.IsMatch(produtos.CodigoProduto))
-                {
-                    ModelState.AddModelError("produtos.codigoComNumero", "Código: Somente números");
-                    return false;
-                }
-                if (produtos.ValorProduto < 0)
-                {
-                    ModelState.AddModelError("produtos.valorNegativo", "Valor não pode ser negativo");
-                    return false;
-                }
-                return true;
+                ModelState.AddModelError("produtos.codigoComNumero", "Código: Somente números");
+                return false;
             }
+            if (produtos.ValorProduto < 0)
+            {
+                ModelState.AddModelError("produtos.valorNegativo", "Valor não pode ser negativo");
+                return false;
+            }
+            return true;
+        }
 
          //public bool CodigoDuplicado(Produtos produtos)
          //   {
