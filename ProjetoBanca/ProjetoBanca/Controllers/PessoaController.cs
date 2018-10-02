@@ -118,7 +118,6 @@ namespace ProjetoBanca.Controllers
                 return false;
             }
 
-
             return true;
         }
 

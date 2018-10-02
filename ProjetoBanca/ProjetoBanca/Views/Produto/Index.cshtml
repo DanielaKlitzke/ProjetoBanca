@@ -15,7 +15,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach(var produto in ViewBag.Produto)
+                @foreach(var produto in ViewBag.Produtos)
                     {
                         <tr>
                             <td>@produto.IdProduto</td>
@@ -23,9 +23,9 @@
                             <td>@produto.NomeProduto</td>
                             <td>@produto.ValorProduto</td>
                             <td>@produto.DescricaoProduto</td>
-                            <td>@produto.UnidadeMedida</td>
+                            <td>@produto.IdUnidadeMedida</td>
                             <td>@produto.Medida</td>
-                            <td>@produto.Categoria</td>
+                            <td>@produto.IdCategoria</td>
                             <td>@produto.AtivoNaoativo</td>
                         </tr>
                     }

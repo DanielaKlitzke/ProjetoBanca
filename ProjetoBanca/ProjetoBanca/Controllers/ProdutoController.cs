@@ -16,7 +16,7 @@ namespace ProjetoBanca.Controllers
         {
             ProdutosDAO dao = new ProdutosDAO();
             IList<Produtos> produtos = dao.ListarProduto();
-            ViewBag.Produto = produtos;
+            ViewBag.Produtos = produtos;
             return View(produtos);
         }
 
