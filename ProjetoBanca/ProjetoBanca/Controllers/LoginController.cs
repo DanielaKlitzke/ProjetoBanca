@@ -16,10 +16,10 @@ namespace ProjetoBanca.Controllers
             return View();
         }
 
-        public ActionResult Autenticacao(String login, String senha)
+        public ActionResult Autenticacao(String login, String senha, int permissao)
         {
             PessoaDAO dao = new PessoaDAO();
-            Pessoa pessoa = dao.Busca(login, senha);
+            Pessoa pessoa = dao.BuscaSenha(login, senha, permissao);
             if (pessoa != null)
             {
                 Session["pessoaLogada"] = pessoa;

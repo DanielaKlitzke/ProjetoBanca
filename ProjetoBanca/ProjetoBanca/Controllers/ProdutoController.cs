@@ -25,16 +25,13 @@ namespace ProjetoBanca.Controllers
             object logado = Session["pessoaLogada"];
             if (logado != null)
             {
-
                 CarregarViewBag();
                 ViewBag.Produtos = new Produtos();
                 return View();
-
             }
             else
             {
                 return RedirectToAction("Index", "Login");
-
             }
         }
 
@@ -77,6 +74,13 @@ namespace ProjetoBanca.Controllers
         public bool ValidaProduto(Produtos produtos)
         {
             Regex numeros = new Regex(@"^\d+$");
+
+            //if (CodigoDuplicado(produtos))
+            //{
+            //    ModelState.AddModelError("produtos.jaExiste", "Código já cadastrado");
+            //    return false;
+            //}
+
             if (!numeros.IsMatch(produtos.CodigoProduto))
             {
                 ModelState.AddModelError("produtos.codigoComNumero", "Código: Somente números");
@@ -93,7 +97,7 @@ namespace ProjetoBanca.Controllers
         public bool CodigoDuplicado(Produtos produtos)
         {
             ProdutosDAO dao = new ProdutosDAO();
-            var produto = dao.Busca(produtos.CodigoProduto);
+            var produto = dao.BuscaCodigo(produtos.CodigoProduto);
             if (produto != null && produtos.CodigoProduto != produto.CodigoProduto)
             {
                 return true;

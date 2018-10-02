@@ -57,7 +57,7 @@ namespace ProjetoBanca.Controllers
 
             if (CpfDuplicado(pessoa))
             {
-                ModelState.AddModelError("pessoa.numerosamais", "Jé existe outra pessoa com este CPF/CNPJ");
+                ModelState.AddModelError("pessoa.jaExiste", "Jé existe outra pessoa com este CPF/CNPJ");
                 return false;
             }
 

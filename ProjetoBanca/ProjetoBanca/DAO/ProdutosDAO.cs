@@ -33,7 +33,7 @@ namespace ProjetoBanca.DAO
             }
         }
 
-        public Produtos Busca(string codigo)
+        public Produtos BuscaCodigo(string codigo)
         {
             using (var contexto = new PetContext())
             {

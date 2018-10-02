@@ -33,11 +33,11 @@ namespace ProjetoBanca.DAO
             }
         }
 
-        public Pessoa Busca(string login, string senha)
+        public Pessoa BuscaSenha(string login, string senha, int permissao)
         {
             using (var contexto = new PetContext())
             {
-                return contexto.Pessoas.FirstOrDefault(u => u.CpfOuCnpj == login && u.Senha == senha);
+                return contexto.Pessoas.FirstOrDefault(u => u.CpfOuCnpj == login && u.Senha == senha && u.Permissao == permissao);
             }
         }
 
