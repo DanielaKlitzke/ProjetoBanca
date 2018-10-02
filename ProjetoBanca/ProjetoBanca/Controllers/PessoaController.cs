@@ -74,9 +74,9 @@ namespace ProjetoBanca.Controllers
                     return false;
                 }
             }
-            else
+            else if (pessoa.TipoPessoa.Equals("2"))
             {
-                if (!pessoa.CpfOuCnpj.Length.Equals(14))
+                if (pessoa.CpfOuCnpj.Length !=14)
                 {
                     ModelState.AddModelError("pessoa.numerosamaiscnpj", "Cnpj tem que ter 14 números");
                     return false;
@@ -87,9 +87,9 @@ namespace ProjetoBanca.Controllers
                     return false;
                 }
             }
-            if (!pessoa.Rg.Length.Equals(7))
+            if (pessoa.Rg.Length <7 || pessoa.Rg.Length >8)
             {
-                ModelState.AddModelError("pessoa.rgnumerodifere", "RG tem que ter 7 números");
+                ModelState.AddModelError("pessoa.rgnumerodifere", "RG tem que ter até 8 números");
                 return false;
             }
             if (!numeros.IsMatch(pessoa.Rg))

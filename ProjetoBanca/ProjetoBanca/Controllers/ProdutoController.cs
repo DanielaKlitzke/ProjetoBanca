@@ -76,8 +76,8 @@ namespace ProjetoBanca.Controllers
         }
         public bool ValidaProduto(Produtos produtos)
         {
-            Regex letras = new Regex(@"^[a-zA-Z]+$");
-            if (!letras.IsMatch(produtos.CodigoProduto))
+            Regex numeros = new Regex(@"^\d+$");
+            if (!numeros.IsMatch(produtos.CodigoProduto))
             {
                 ModelState.AddModelError("produtos.codigoComNumero", "Código: Somente números");
                 return false;
